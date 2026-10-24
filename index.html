@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global ER & HRM Master Knowledge Hub</title>
+    <title>ER/HRM Knowledge Hub | Complete Enterprise Platform</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,322 +22,224 @@
         }
     </script>
 </head>
-<body class="bg-lightBg text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-lightBg text-slate-800 font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0">
 
     <!-- Top Navigation Header -->
     <header class="bg-navy text-white shadow-md sticky top-0 z-50 border-b-2 border-gold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
-                <span class="text-2xl">🌍</span>
+                <span class="text-2xl">🎓</span>
                 <div>
-                    <h1 class="text-base sm:text-lg font-bold tracking-wide">Global ER & HRM Hub</h1>
-                    <p class="text-xs text-gold font-semibold">Worldwide Academic & Professional Encyclopedia</p>
+                    <h1 class="text-base sm:text-lg font-bold tracking-wide">ER/HRM Knowledge Hub</h1>
+                    <p class="text-xs text-gold font-semibold">Learn. Practise. Lead.</p>
                 </div>
             </div>
             <nav class="hidden xl:flex space-x-3 text-xs font-medium">
                 <button onclick="switchTab('home')" class="hover:text-gold transition">Home</button>
-                <button onclick="switchTab('history')" class="hover:text-gold transition">History & Evolution</button>
-                <button onclick="switchTab('hrm')" class="hover:text-gold transition">Full HRM Masterclass</button>
-                <button onclick="switchTab('er')" class="hover:text-gold transition">Full ER Masterclass</button>
-                <button onclick="switchTab('global-laws')" class="hover:text-gold transition">Global Country Acts</button>
-                <button onclick="switchTab('dictionary')" class="hover:text-gold transition">A–Z Dictionary</button>
-                <button onclick="switchTab('cases')" class="hover:text-gold transition">Case Law</button>
-                <button onclick="switchTab('calculators')" class="hover:text-gold transition">Calculators</button>
+                <button onclick="switchTab('dictionary')" class="hover:text-gold transition">Dictionary</button>
+                <button onclick="switchTab('quiz')" class="hover:text-gold transition">Exams</button>
+                <button onclick="switchTab('academy')" class="hover:text-gold transition">Academy</button>
+                <button onclick="switchTab('guidance')" class="hover:text-gold transition">Guidance</button>
+                <button onclick="switchTab('cases')" class="hover:text-gold transition">Case Studies</button>
+                <button onclick="switchTab('nigeria-law')" class="hover:text-gold transition">Labour Law</button>
                 <button onclick="switchTab('templates')" class="hover:text-gold transition">Templates</button>
-                <button onclick="switchTab('ai')" class="hover:text-gold transition">AI Mentor</button>
+                <button onclick="switchTab('careers')" class="hover:text-gold transition">Careers</button>
+                <button onclick="switchTab('calculators')" class="hover:text-gold transition">Calculators</button>
+                <button onclick="switchTab('community')" class="hover:text-gold transition">Community</button>
+                <button onclick="switchTab('ai')" class="text-gold font-bold hover:underline">AI Mentor</button>
             </nav>
-            <div class="flex items-center space-x-2 bg-secondaryNavy px-3 py-1.5 rounded-lg border border-gold">
-                <span class="text-xs text-gold font-bold">⚖️ Balanced Worldwide Edition</span>
+            <div class="flex items-center space-x-2">
+                <button onclick="switchTab('profile')" class="bg-secondaryNavy text-white px-3 py-1.5 rounded-lg border border-gold text-xs font-bold hover:bg-slate-800 transition">👤 Profile</button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation Bar -->
-    <div class="xl:hidden bg-secondaryNavy text-white flex overflow-x-auto py-2.5 px-4 space-x-4 text-xs font-medium border-b border-slate-700">
-        <button onclick="switchTab('home')" class="whitespace-nowrap hover:text-gold">Home</button>
-        <button onclick="switchTab('history')" class="whitespace-nowrap hover:text-gold">History</button>
-        <button onclick="switchTab('hrm')" class="whitespace-nowrap hover:text-gold">HRM</button>
-        <button onclick="switchTab('er')" class="whitespace-nowrap hover:text-gold">ER</button>
-        <button onclick="switchTab('global-laws')" class="whitespace-nowrap hover:text-gold">Global Acts</button>
-        <button onclick="switchTab('dictionary')" class="whitespace-nowrap hover:text-gold">Dictionary</button>
-        <button onclick="switchTab('cases')" class="whitespace-nowrap hover:text-gold">Cases</button>
-        <button onclick="switchTab('calculators')" class="whitespace-nowrap hover:text-gold">Calculators</button>
-        <button onclick="switchTab('templates')" class="whitespace-nowrap hover:text-gold">Templates</button>
-        <button onclick="switchTab('ai')" class="whitespace-nowrap hover:text-gold">AI Mentor</button>
+    <!-- Mobile Navigation Bottom Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy text-white flex justify-around py-2.5 px-2 z-50 border-t border-gold text-xs font-medium shadow-lg">
+        <button onclick="switchTab('home')" class="flex flex-col items-center hover:text-gold"><span class="text-base">🏠</span>Home</button>
+        <button onclick="switchTab('academy')" class="flex flex-col items-center hover:text-gold"><span class="text-base">📚</span>Learn</button>
+        <button onclick="switchTab('quiz')" class="flex flex-col items-center hover:text-gold"><span class="text-base">📝</span>Quiz</button>
+        <button onclick="switchTab('dictionary')" class="flex flex-col items-center hover:text-gold"><span class="text-base">📖</span>Dict</button>
+        <button onclick="switchTab('profile')" class="flex flex-col items-center hover:text-gold"><span class="text-base">👤</span>Profile</button>
     </div>
 
-    <!-- Main Content Container -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Main App Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
 
-        <!-- TAB 1: HOME -->
+        <!-- MODULE 12 & HOME DASHBOARD -->
         <section id="tab-home" class="space-y-6">
-            <div class="bg-navy text-white p-8 rounded-2xl shadow-lg border-l-4 border-gold">
-                <span class="text-xs bg-gold text-navy font-bold px-2.5 py-1 rounded uppercase tracking-wider mb-3 inline-block">The Definitive Worldwide Reference</span>
-                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Master Encyclopedia of Employment Relations & Human Resource Management</h2>
-                <p class="text-slate-300 text-sm sm:text-base max-w-3xl mb-6">
-                    A completely balanced, deep-dive academic and professional platform. Explore the full historical genesis of both disciplines worldwide, exhaustive HRM functional architectures, global Employment Relations models, multi-country statutory acts, and practical management tools.
+            <div class="bg-navy text-white p-6 sm:p-8 rounded-2xl shadow-lg border-l-4 border-gold space-y-4">
+                <span class="text-xs bg-gold text-navy font-bold px-2.5 py-1 rounded uppercase tracking-wider">Enterprise Digital Learning Platform</span>
+                <h2 class="text-2xl sm:text-3xl font-bold">Comprehensive ER & HRM Portal</h2>
+                <p class="text-slate-300 text-sm sm:text-base max-w-3xl">
+                    Empowering university students, HR practitioners, researchers, and business leaders with theoretical models, practical toolkits, and statutory legal guidance.
                 </p>
-                <div class="flex flex-wrap gap-3">
-                    <button onclick="switchTab('history')" class="bg-gold text-navy font-bold px-5 py-2.5 rounded-lg hover:bg-goldHover transition">Historical Evolution</button>
-                    <button onclick="switchTab('hrm')" class="bg-secondaryNavy text-white border border-gold font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800 transition">Full HRM Masterclass</button>
-                    <button onclick="switchTab('er')" class="bg-secondaryNavy text-white border border-gold font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800 transition">Full ER Masterclass</button>
+                <div class="relative max-w-xl">
+                    <input type="text" id="globalSearch" placeholder="Search across dictionary, courses, templates, or laws..." class="w-full bg-white text-slate-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gold shadow-inner" oninput="handleGlobalSearch(this.value)">
                 </div>
             </div>
 
+            <!-- Daily Highlights Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div onclick="switchTab('history')" class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-blue-600 cursor-pointer hover:border-gold transition">
-                    <span class="text-2xl mb-2 block">⏳</span>
-                    <h3 class="font-bold text-navy text-base mb-1">Global History & Roots</h3>
-                    <p class="text-xs text-slate-600 mb-3">Industrial Revolution, Scientific Management, Hawthorne Studies, Guilds, and the rise of Tripartite Labor Standards.</p>
-                    <span class="text-xs font-bold text-blue-600">Read Historical Timeline →</span>
-                </div>
-                <div onclick="switchTab('hrm')" class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-gold cursor-pointer hover:border-gold transition">
-                    <span class="text-2xl mb-2 block">📈</span>
-                    <h3 class="font-bold text-navy text-base mb-1">Human Resource Management (HRM)</h3>
-                    <p class="text-xs text-slate-600 mb-3">Strategic planning, job design, talent acquisition, performance systems, compensation, and motivation theories.</p>
-                    <span class="text-xs font-bold text-gold">Explore HRM Masterclass →</span>
-                </div>
-                <div onclick="switchTab('er')" class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-emerald-600 cursor-pointer hover:border-gold transition">
-                    <span class="text-2xl mb-2 block">🤝</span>
-                    <h3 class="font-bold text-navy text-base mb-1">Employment Relations (ER)</h3>
-                    <p class="text-xs text-slate-600 mb-3">Pluralist and unitarist frameworks, trade union dynamics, collective bargaining, dispute resolution, and natural justice.</p>
-                    <span class="text-xs font-bold text-emerald-600">Explore ER Masterclass →</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 2: HISTORY & EVOLUTION -->
-        <section id="tab-history" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
-                <div>
-                    <span class="text-xs font-bold text-gold uppercase tracking-wider">Origins & Historical Background</span>
-                    <h2 class="text-2xl font-bold text-navy mt-1">The Parallel Genesis of ER and HRM Worldwide</h2>
-                    <p class="text-sm text-slate-600 mt-1">Tracing how industrialization created the need for structured people management and institutional labor governance.</p>
+                <!-- Daily HR Term -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-gold space-y-2">
+                    <span class="text-xs font-bold text-gold uppercase">Daily HR Concept</span>
+                    <h3 class="font-bold text-navy text-lg">Constructive Dismissal</h3>
+                    <p class="text-xs text-slate-600">Occurs when an employee resigns because employer conduct makes working conditions unbearable, treated as unfair termination under law.</p>
+                    <button onclick="switchTab('dictionary')" class="text-xs font-bold text-navy hover:underline">Explore Dictionary →</button>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-blue-600">PHASE 1: THE INDUSTRIAL REVOLUTION & WELFARE WORK (Late 18th - 19th Century)</span>
-                        <h3 class="font-bold text-navy text-base">Factory Systems & Early Labor Unrest</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            The transition from agrarian economies to mechanized factory production in Britain, Europe, and North America created severe labor exploitation. In response, early "Welfare Officers" and philanthropic employers introduced housing, feeding, and basic medical care. Concurrently, underground worker combinations emerged, leading to early criminalization and eventual legalization of trade unions (e.g., British Trade Union Act 1871).
-                        </p>
-                    </div>
+                <!-- Daily Exam Practice -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-blue-600 space-y-2">
+                    <span class="text-xs font-bold text-blue-600 uppercase">Interactive Exam Prep</span>
+                    <h3 class="font-bold text-navy text-base">Test your knowledge on statutory Nigerian labour regulations.</h3>
+                    <button onclick="switchTab('quiz')" class="bg-navy text-gold text-xs font-bold px-4 py-2 rounded hover:bg-slate-800 transition">Start Quiz →</button>
+                </div>
 
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-blue-600">PHASE 2: SCIENTIFIC MANAGEMENT & EARLY PERSONNEL (1900 - 1920s)</span>
-                        <h3 class="font-bold text-navy text-base">F.W. Taylor & Personnel Departments</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Frederick Winslow Taylor published *The Principles of Scientific Management* (1911), introducing time-and-motion studies and task specialization. This viewed workers as economic cogs. To manage massive hiring and administrative record-keeping post-WWI, the first formal "Personnel Management" departments were established in corporate organizations.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-gold">PHASE 3: THE HUMAN RELATIONS MOVEMENT & STATE REGULATION (1930s - 1950s)</span>
-                        <h3 class="font-bold text-navy text-base">Hawthorne Studies & Institutionalizing ER</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Elton Mayo’s Hawthorne Studies (1927–1932) revolutionized management thought, proving that social norms, group dynamics, and psychological factors dictate productivity. Simultaneously, governments enacted major statutory frameworks (e.g., US Wagner Act 1935) to institutionalize collective bargaining and legitimize trade unions.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-emerald-600">PHASE 4: STRATEGIC HRM & GLOBALIZED ER (1980s - Present)</span>
-                        <h3 class="font-bold text-navy text-base">From Personnel to SHRM & Modern Governance</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Faced with global competition, personnel management transformed into Strategic Human Resource Management (SHRM), aligning people systems directly with corporate strategy. In parallel, Employment Relations expanded into international jurisprudence, enforced by bodies like the International Labour Organization (ILO) across sovereign legal systems.
-                        </p>
-                    </div>
+                <!-- AI Mentor Widget -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-emerald-600 space-y-2">
+                    <span class="text-xs font-bold text-emerald-600 uppercase">HR Mentor AI Assistant</span>
+                    <h3 class="font-bold text-navy text-base">Have an employment law or study question?</h3>
+                    <button onclick="switchTab('ai')" class="bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded hover:bg-emerald-700 transition">Ask AI Assistant →</button>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 3: FULL HRM MASTERCLASS -->
-        <section id="tab-hrm" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
-                <div>
-                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Comprehensive Academic & Practical Masterclass</span>
-                    <h2 class="text-2xl font-bold text-navy mt-1">Human Resource Management (HRM) In Full Detail</h2>
-                    <p class="text-sm text-slate-600 mt-1">Exhaustive coverage of strategic human capital architectures, organizational behavior, and operational practices.</p>
-                </div>
-
-                <div class="space-y-4">
-                    <div class="p-5 border rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">1. Strategic Workforce Planning & Job Analysis</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Workforce planning forecasts human capital supply and demand to support business objectives. Job analysis systematically collects task data through observation, interviews, and questionnaires to produce **Job Descriptions (JDs)** and **Job Specifications (JSs)**. Job design applies models like the *Hackman & Oldham Job Characteristics Model* to enhance autonomy, skill variety, and task significance.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">2. Talent Acquisition, Sourcing & Socialization</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Recruitment balances internal mobility pipelines with external talent sourcing. Selection methodologies leverage competency frameworks, psychometric testing, and structured behavioral interviews using the **STAR method** (Situation, Task, Action, Result). Onboarding programs ensure cultural integration and mitigate early turnover.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">3. Performance Management Systems</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Aligns individual employee output with corporate strategy. Core appraisal systems include **KPIs** (Key Performance Indicators), **OKRs** (Objectives and Key Results), **BARS** (Behaviorally Anchored Rating Scales), **MBO** (Management by Objectives), and **360-Degree Feedback**. Underperformance is addressed through formal **Performance Improvement Plans (PIPs)**.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">4. Total Rewards, Job Evaluation & Motivation Theories</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Total rewards encompass direct compensation, benefits, and intrinsic motivation. Job evaluation methods like the **Hay Point System** establish internal pay equity. Motivation is analyzed via classical frameworks: *Maslow’s Hierarchy of Needs*, *Herzberg’s Two-Factor Theory* (hygiene factors vs. motivators), *Vroom’s Expectancy Theory*, and *Adams’ Equity Theory*.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">5. Learning, Development (L&D) & Organizational Culture</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Identifies capability gaps via Training Needs Analysis (TNA). Program design follows the **ADDIE model** (Analysis, Design, Development, Implementation, Evaluation), while evaluation uses **Kirkpatrick’s Four-Level Training Evaluation Model** (Reaction, Learning, Behavior, Results) to measure return on investment.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 4: FULL ER MASTERCLASS -->
-        <section id="tab-er" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
-                <div>
-                    <span class="text-xs font-bold text-gold uppercase tracking-wider">Comprehensive Academic & Practical Masterclass</span>
-                    <h2 class="text-2xl font-bold text-navy mt-1">Employment Relations (ER) In Full Detail</h2>
-                    <p class="text-sm text-slate-600 mt-1">Exhaustive coverage of industrial relations theories, trade union structures, collective bargaining, and workplace justice.</p>
-                </div>
-
-                <div class="space-y-4">
-                    <div class="p-5 border rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">1. Theoretical Frameworks of Industrial Relations</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Analyzes how workplace power and conflict are distributed. Key theoretical perspectives include:
-                        </p>
-                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
-                            <li><strong>The Unitarist Perspective:</strong> Views the organization as an integrated team with shared objectives; trade unions are seen as unnecessary intruders.</li>
-                            <li><strong>The Pluralist Perspective:</strong> Views the organization as a coalition of competing interest groups; trade unions are legitimate representatives of worker interests.</li>
-                            <li><strong>The Radical / Marxist Perspective:</strong> Views employment relations through the lens of structural class conflict between capital owners and wage labor.</li>
-                        </ul>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">2. Trade Unions, Employer Federations & Collective Bargaining</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Trade unions organize workers to safeguard wages, job security, and safety standards. **Collective Bargaining** is the institutionalized negotiation process between management (often represented by employer federations like NECA) and recognized unions, culminating in a binding **Collective Bargaining Agreement (CBA)**.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">3. Industrial Conflict & Statutory Dispute Resolution</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            When negotiations stall, industrial conflict arises (strikes, work-to-rule, picketing by employees; lockouts by employers). Statutory dispute resolution channels mandate structured pathways: internal grievance procedures $\rightarrow$ mediation $\rightarrow$ state conciliation $\rightarrow$ industrial arbitration tribunals $\rightarrow$ labor courts.
-                        </p>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <h3 class="font-bold text-navy text-base">4. Workplace Discipline & Natural Justice</h3>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            Disciplinary procedures must strictly adhere to administrative law and natural justice principles:
-                        </p>
-                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
-                            <li><strong>Audi Alteram Partem:</strong> The right of an accused employee to receive written notice of allegations and a fair opportunity to defend themselves.</li>
-                            <li><strong>Nemo Judex In Causa Sua:</strong> The rule against bias, requiring an impartial disciplinary panel.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 5: GLOBAL COUNTRY LABOUR ACTS -->
-        <section id="tab-global-laws" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
-                <div>
-                    <span class="text-xs font-bold text-navy uppercase tracking-wider">Worldwide Jurisprudence</span>
-                    <h2 class="text-2xl font-bold text-navy mt-1">Global Country Labour Acts & Statutes</h2>
-                    <p class="text-sm text-slate-600 mt-1">Comparative breakdown of statutory employment acts across major global jurisdictions.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-emerald-700">🇳🇬 NIGERIA</span>
-                        <h3 class="font-bold text-navy text-base">Statutory Frameworks</h3>
-                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
-                            <li><strong>Labour Act (Cap L1 LFN 2004):</strong> Regulates manual/clerical labor, mandatory written contracts within 3 months, paid annual leave, and maternity leave rights.</li>
-                            <li><strong>Pension Reform Act 2014:</strong> Mandatory contributory pension schema (min 10% employer, 8% employee) for businesses with 15+ workers.</li>
-                            <li><strong>Employees' Compensation Act 2010:</strong> No-fault workplace injury insurance administered by NSITF (1% payroll paid by employer).</li>
-                            <li><strong>Trade Disputes Act & NICN:</strong> Governs trade union disputes and National Industrial Court adjudication.</li>
-                        </ul>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-blue-700">🇬🇧 UNITED KINGDOM</span>
-                        <h3 class="font-bold text-navy text-base">Statutory Frameworks</h3>
-                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
-                            <li><strong>Employment Rights Act 1996:</strong> Principal legislation covering Day 1 written statements of particulars, redundancy rules, and statutory notice.</li>
-                            <li><strong>Equality Act 2010:</strong> Consolidates anti-discrimination laws protecting nine core characteristics.</li>
-                            <li><strong>Trade Union and Labour Relations (Consolidation) Act 1992:</strong> Regulates union recognition and ballot requirements for industrial action.</li>
-                        </ul>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-indigo-700">🇺🇸 UNITED STATES</span>
-                        <h3 class="font-bold text-navy text-base">Statutory Frameworks</h3>
-                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
-                            <li><strong>Fair Labor Standards Act (FLSA):</strong> Federal statute establishing minimum wage, overtime pay eligibility, and child labor limits.</li>
-                            <li><strong>National Labor Relations Act (NLRA / Wagner Act):</strong> Protects employee rights to organize, form unions, and engage in collective bargaining.</li>
-                            <li><strong>Title VII of Civil Rights Act 1964:</strong> Prohibits workplace discrimination based on race, color, religion, sex, or national origin.</li>
-                            <li><strong>At-Will Employment Doctrine:</strong> State-level common law rule allowing termination at any time for any legal reason.</li>
-                        </ul>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg bg-lightBg space-y-2">
-                        <span class="text-xs font-bold text-amber-700">🇿🇦 SOUTH AFRICA & 🇬🇭 GHANA</span>
-                        <h3 class="font-bold text-navy text-base">African Jurisprudence</h3>
-                        <ul class="text-xs text-slate-700 space-y-1 list-disc list-inside">
-                            <li><strong>South Africa Labour Relations Act (LRA 1995):</strong> Promotes economic development and social justice, establishing the CCMA for conciliation.</li>
-                            <li><strong>South Africa BCEA (1997):</strong> Governs baseline working hours, leave entitlements, and termination rules.</li>
-                            <li><strong>Ghana Labour Act 2003 (Act 651):</strong> Comprehensive framework covering fair termination, occupational safety, and the National Labour Commission (NLC).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 6: A TO Z DICTIONARY -->
+        <!-- MODULE 1: A–Z ER/HRM DICTIONARY -->
         <section id="tab-dictionary" class="space-y-6 hidden">
-            <div>
-                <h2 class="text-2xl font-bold text-navy mb-1">A–Z Encyclopedic ER & HRM Dictionary</h2>
-                <p class="text-sm text-slate-500 mb-4">Click any letter to filter terms instantly or use the search bar.</p>
-                
-                <input type="text" id="dictSearch" onkeyup="filterDictionarySearch()" placeholder="Search dictionary terms..." class="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold mb-4">
-
-                <div class="flex flex-wrap gap-1.5 bg-white p-3 rounded-lg border border-slate-200 text-xs font-bold text-navy shadow-sm mb-6" id="alphabetBar">
-                    <!-- Populated via JS -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-navy">ER & HRM A–Z Dictionary</h2>
+                    <p class="text-sm text-slate-500">Academic definitions, practical examples, and legal considerations.</p>
                 </div>
+                <input type="text" id="dictSearch" onkeyup="filterDictionarySearch()" placeholder="Search terms (e.g. Redundancy, Bargaining)..." class="w-full sm:w-80 bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold">
             </div>
+            <div class="flex flex-wrap gap-1.5 bg-white p-3 rounded-lg border border-slate-200 text-xs font-bold text-navy shadow-sm" id="alphabetBar"></div>
+            <div id="dictionaryContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
 
-            <div id="dictionaryContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Populated via JS -->
+        <!-- MODULE 2: INTERACTIVE QUIZ & EXAM CENTRE -->
+        <section id="tab-quiz" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-navy">Examination & Practice Center</h2>
+                    <span id="quizCategoryBadge" class="text-xs bg-gold text-navy font-bold px-3 py-1 rounded">MODULE</span>
+                </div>
+                <p id="quizProgress" class="text-xs font-bold text-slate-500 mb-4">Question 1 of 5</p>
+                <h3 id="quizQuestionText" class="text-lg font-bold text-navy mb-4"></h3>
+                <div id="quizOptionsContainer" class="space-y-3 mb-6"></div>
+                <div id="quizExplanationBox" class="hidden p-4 rounded-lg mb-4 text-sm font-medium"></div>
+                <button id="quizNextBtn" onclick="nextQuizQuestion()" class="hidden bg-navy text-gold font-bold px-6 py-2.5 rounded-lg hover:bg-slate-800 transition">Next Question →</button>
             </div>
         </section>
 
-        <!-- TAB 7: CASE STUDIES -->
+        <!-- MODULE 3: HR LEARNING ACADEMY -->
+        <section id="tab-academy" class="space-y-6 hidden">
+            <div>
+                <h2 class="text-2xl font-bold text-navy">HR Learning Academy</h2>
+                <p class="text-sm text-slate-500">Structured courses covering full undergraduate, postgraduate, and professional CIPM syllabi.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <span class="text-xs bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded">Course 01</span>
+                    <h3 class="font-bold text-navy text-base">Introduction to Human Resource Management</h3>
+                    <p class="text-xs text-slate-600">Evolution from personnel administration to Strategic HRM (SHRM), Fayol, Taylor, and Mayo.</p>
+                    <button onclick="alert('Module loading...')" class="w-full bg-navy text-gold text-xs font-bold py-2 rounded hover:bg-slate-800">Start Course</button>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <span class="text-xs bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded">Course 02</span>
+                    <h3 class="font-bold text-navy text-base">Principles of Employment Relations</h3>
+                    <p class="text-xs text-slate-600">Unitarism, pluralism, trade union structures, collective bargaining, and dispute mechanics.</p>
+                    <button onclick="alert('Module loading...')" class="w-full bg-navy text-gold text-xs font-bold py-2 rounded hover:bg-slate-800">Start Course</button>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <span class="text-xs bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded">Course 03</span>
+                    <h3 class="font-bold text-navy text-base">Labour Law & Statutory Compliance</h3>
+                    <p class="text-xs text-slate-600">Nigerian Labour Act Cap L1, PRA 2014, ECA 2010, and National Industrial Court precedents.</p>
+                    <button onclick="alert('Module loading...')" class="w-full bg-navy text-gold text-xs font-bold py-2 rounded hover:bg-slate-800">Start Course</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 4: HR GUIDANCE & ADVICE -->
+        <section id="tab-guidance" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                <h2 class="text-2xl font-bold text-navy">Practical HR Workplace Guidance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 border rounded bg-lightBg space-y-2">
+                        <h3 class="font-bold text-navy text-sm">Handling Employee Grievances</h3>
+                        <p class="text-xs text-slate-600">Steps for conducting fair, confidential investigations while observing administrative natural justice.</p>
+                    </div>
+                    <div class="p-4 border rounded bg-lightBg space-y-2">
+                        <h3 class="font-bold text-navy text-sm">Fair Disciplinary Hearing Procedures</h3>
+                        <p class="text-xs text-slate-600">Issuing queries, respecting the 48-hour reply rule, and applying unbiased panel standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 6: CASE STUDIES LIBRARY -->
         <section id="tab-cases" class="space-y-6 hidden">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
-                <h2 class="text-2xl font-bold text-navy">Landmark Judicial Precedents</h2>
-                <div class="border-l-4 border-navy p-4 bg-lightBg rounded">
-                    <h3 class="font-bold text-navy text-base">Adewumi v. Guaranty Trust Bank Plc (NICN)</h3>
-                    <p class="text-xs text-slate-700 mt-1">Established that forcing employee resignation through intolerable workplace conditions constitutes Constructive Dismissal under Nigerian labor jurisprudence.</p>
-                </div>
-                <div class="border-l-4 border-navy p-4 bg-lightBg rounded">
-                    <h3 class="font-bold text-navy text-base">Skye Bank Plc v. Anaemem Iwu (Supreme Court)</h3>
-                    <p class="text-xs text-slate-700 mt-1">Empowered the National Industrial Court of Nigeria (NICN) to apply international labor standards (ILO Convention 158), requiring valid justification for contract terminations.</p>
+                <h2 class="text-2xl font-bold text-navy">Real-World HR Case Studies</h2>
+                <div class="border-l-4 border-gold p-4 bg-lightBg rounded space-y-2">
+                    <span class="text-xs font-bold text-gold">CASE STUDY 01</span>
+                    <h3 class="font-bold text-navy text-base">Resolving High Supervisory Turnover</h3>
+                    <p class="text-xs text-slate-700"><strong>Scenario:</strong> A commercial firm suffers 30% annual turnover due to wage compression and lack of autonomy.</p>
+                    <p class="text-xs text-slate-700"><strong>Analysis:</strong> Re-evaluate roles using the Hay Point System and introduce career progression ladders.</p>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 8: CALCULATORS -->
+        <!-- MODULE 7: LABOUR LAW FRAMEWORK -->
+        <section id="tab-nigeria-law" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                <h2 class="text-2xl font-bold text-navy">🇳🇬 Statutory Labour Law & Judicial Rules</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="border p-4 rounded bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm">Labour Act (Cap L1 LFN 2004)</h3>
+                        <p class="text-xs text-slate-600 mt-1">Written contract within 3 months, paid leave, maternity benefits, and overtime rules.</p>
+                    </div>
+                    <div class="border p-4 rounded bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm">Pension Reform Act 2014</h3>
+                        <p class="text-xs text-slate-600 mt-1">18% total contribution (10% employer, 8% employee) managed via licensed PFAs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 8: HR TEMPLATE LIBRARY -->
+        <section id="tab-templates" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                <h2 class="text-2xl font-bold text-navy">HR Document & Template Library</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 border rounded bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm">Employment Contract</h3>
+                        <button onclick="alert('Template copied!')" class="w-full mt-3 bg-navy text-gold font-bold text-xs py-2 rounded">Get Template</button>
+                    </div>
+                    <div class="p-4 border rounded bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm">Disciplinary Query</h3>
+                        <button onclick="alert('Template copied!')" class="w-full mt-3 bg-navy text-gold font-bold text-xs py-2 rounded">Get Template</button>
+                    </div>
+                    <div class="p-4 border rounded bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm">Redundancy Notice</h3>
+                        <button onclick="alert('Template copied!')" class="w-full mt-3 bg-navy text-gold font-bold text-xs py-2 rounded">Get Template</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 9: CAREER DEVELOPMENT -->
+        <section id="tab-careers" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                <h2 class="text-2xl font-bold text-navy">HR Career Development & CIPM Certification</h2>
+                <p class="text-xs text-slate-700 leading-relaxed">
+                    Guidance on career progression from HR Officer to HR Director, including licensing with the Chartered Institute of Personnel Management of Nigeria (CIPM).
+                </p>
+            </div>
+        </section>
+
+        <!-- MODULE 11: HR CALCULATORS -->
         <section id="tab-calculators" class="space-y-6 hidden">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -361,45 +263,44 @@
             </div>
         </section>
 
-        <!-- TAB 9: TEMPLATES -->
-        <section id="tab-templates" class="space-y-6 hidden">
+        <!-- MODULE 12 & 13: USER PROFILE & COMMUNITY -->
+        <section id="tab-profile" class="space-y-6 hidden">
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
-                <h2 class="text-2xl font-bold text-navy">Document & Template Library</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div class="p-4 border rounded bg-lightBg">
-                        <h3 class="font-bold text-navy text-sm">Employment Contract</h3>
-                        <button onclick="downloadTemplate('Employment Contract')" class="w-full mt-3 bg-navy text-gold font-bold text-xs py-2 rounded">Copy Template</button>
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-navy text-gold font-bold text-2xl flex items-center justify-center rounded-full">🎓</div>
+                    <div>
+                        <h2 class="text-xl font-bold text-navy">User Profile & Dashboard</h2>
+                        <p class="text-xs text-slate-500">Learner Level: University Student / HR Officer</p>
                     </div>
-                    <div class="p-4 border rounded bg-lightBg">
-                        <h3 class="font-bold text-navy text-sm">Disciplinary Query</h3>
-                        <button onclick="downloadTemplate('Disciplinary Query')" class="w-full mt-3 bg-navy text-gold font-bold text-xs py-2 rounded">Copy Template</button>
-                    </div>
-                    <div class="p-4 border rounded bg-lightBg">
-                        <h3 class="font-bold text-navy text-sm">Redundancy Notice</h3>
-                        <button onclick="downloadTemplate('Redundancy Notice')" class="w-full mt-3 bg-navy text-gold font-bold text-xs py-2 rounded">Copy Template</button>
-                    </div>
+                </div>
+                 </section>
+
+        <section id="tab-community" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                <h2 class="text-2xl font-bold text-navy">ER/HRM Discussion Forum</h2>
+                <div class="p-4 border rounded bg-lightBg">
+                    <strong class="text-xs text-navy block">Topic: Hybrid Work Attendance & Performance KPIs</strong>
+                    <p class="text-xs text-slate-600 mt-1">How are HR teams balancing remote productivity with traditional attendance metrics?</p>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 10: AI MENTOR -->
+        <!-- MODULE 5: HR MENTOR AI ASSISTANT -->
         <section id="tab-ai" class="space-y-4 hidden">
             <div class="bg-navy text-white p-4 rounded-t-xl border-b-2 border-gold flex justify-between items-center">
                 <div>
                     <h2 class="font-bold text-lg">HR Mentor AI Assistant</h2>
-                    <p class="text-xs text-gold">24/7 Global HRM & ER Expert</p>
+                    <p class="text-xs text-gold">24/7 Context-Aware ER & HRM Expert</p>
                 </div>
-                <span class="text-xs bg-secondaryNavy px-2.5 py-1 rounded border border-gold">Gemini Engine</span>
+                <span class="text-xs bg-secondaryNavy px-2.5 py-1 rounded border border-gold">Gemini Powered</span>
             </div>
-
             <div id="aiChatWindow" class="bg-white border border-slate-200 rounded-b-xl p-4 h-96 overflow-y-auto space-y-3">
                 <div class="bg-slate-100 p-3 rounded-lg max-w-[85%] text-sm text-slate-800">
-                    Hello! I am your global HRM and ER Mentor AI. Ask me anything about worldwide labor laws, historical management theories, performance frameworks, or industrial relations!
+                    Hello! I am your HR Mentor AI. How can I assist you with your HRM studies, labor law inquiries, or workplace scenarios?
                 </div>
             </div>
-
             <div class="flex gap-2">
-                <input type="text" id="aiInput" placeholder="Ask e.g., Compare US at-will employment with UK employment law..." class="flex-grow bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold">
+                <input type="text" id="aiInput" placeholder="Ask e.g., Explain collective bargaining with practical examples..." class="flex-grow bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold">
                 <button onclick="sendAIMessage()" class="bg-gold text-navy font-bold px-6 py-2.5 rounded-lg hover:bg-goldHover transition">Send</button>
             </div>
         </section>
@@ -407,14 +308,14 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy text-slate-400 text-center py-6 mt-12 border-t border-slate-800 text-xs">
-        <p>© 2026 Global ER & HRM Master Hub • Learn. Practise. Lead. • Hosted on GitHub Pages</p>
+    <footer class="bg-navy text-slate-400 text-center py-6 mt-12 border-t border-slate-800 text-xs hidden md:block">
+        <p>© 2026 ER/HRM Knowledge Hub • Learn. Practise. Lead. • Hosted on GitHub Pages</p>
     </footer>
 
-    <!-- Script Logic -->
+    <!-- Logic Script -->
     <script>
         function switchTab(tabId) {
-            const tabs = ['home', 'history', 'hrm', 'er', 'global-laws', 'dictionary', 'cases', 'calculators', 'templates', 'ai'];
+            const tabs = ['home', 'dictionary', 'quiz', 'academy', 'guidance', 'cases', 'nigeria-law', 'templates', 'careers', 'calculators', 'profile', 'community', 'ai'];
             tabs.forEach(t => {
                 const el = document.getElementById('tab-' + t);
                 if(el) el.classList.add('hidden');
@@ -425,24 +326,10 @@
         }
 
         const dictionaryTerms = [
-            { term: "Arbitration", letter: "A", category: "ER", simple: "Settling disputes using an impartial third party with a binding award.", academic: "Quasi-judicial process (Fashoyin, 1992)." },
-            { term: "Appraisal (Performance)", letter: "A", category: "HRM", simple: "Systematic review of employee contribution against standards.", academic: "Evaluation of performance against key metrics (Cascio, 2018)." },
-            { term: "At-Will Employment", letter: "A", category: "Global Law", simple: "US doctrine allowing termination at any time for any legal reason.", academic: "Common law employment-at-will standard." },
-            { term: "Bargaining Unit", letter: "B", category: "ER", simple: "Group of workers represented by a union for collective negotiations.", academic: "Scope of workers under a CBA." },
-            { term: "Constructive Dismissal", letter: "C", category: "ER", simple: "Resignation triggered by unbearable employer conduct.", academic: "Fundamental breach of contract forcing resignation (Adewumi v. GTB)." },
-            { term: "Employee Turnover", letter: "E", category: "HRM", simple: "Rate at which employees leave an organization over time.", academic: "Staff stability metric (Cascio, 2018)." },
-            { term: "Flsa", letter: "F", category: "Global Law", simple: "US Fair Labor Standards Act regulating minimum wage and overtime.", academic: "Federal labor standard." },
-            { term: "Hay Point System", letter: "H", category: "HRM", simple: "Quantitative job evaluation method for compensation grading.", academic: "Point-factor evaluation system." },
-            { term: "Industrial Relations", letter: "I", category: "ER", simple: "Study of employment rules and conflict between capital and labor.", academic: "Governance of workplace relations." },
-            { term: "Job Analysis", letter: "J", category: "HRM", simple: "Systematic collection of duties and requirements for a role.", academic: "Basis for JDs and Job Specs (Armstrong, 2020)." },
-            { term: "Key Performance Indicators (KPIs)", letter: "K", category: "HRM", simple: "Quantifiable metrics evaluating target achievement.", academic: "Strategic operational metrics." },
-            { term: "Natural Justice", letter: "N", category: "ER", simple: "Fair hearing (audi alteram partem) and freedom from bias.", academic: "Core administrative law standard." },
-            { term: "Onboarding", letter: "O", category: "HRM", simple: "Socialization process integrating new hires into company culture.", academic: "Early retention driver." },
-            { term: "Pluralism", letter: "P", category: "ER", simple: "Industrial relations perspective recognizing competing interest groups and unions.", academic: "Core IR theoretical framework." },
-            { term: "Redundancy", letter: "R", category: "ER", simple: "Job termination due to restructuring or economic surplus.", academic: "Statutory severance process." },
-            { term: "Scientific Management", letter: "S", category: "HRM History", simple: "Workflow efficiency theory by F.W. Taylor (1911).", academic: "Time-and-motion task analysis." },
-            { term: "Trade Union", letter: "T", category: "ER", simple: "Continuous association of workers protecting employment rights.", academic: "Tripartite labor actor." },
-            { term: "Unitarism", letter: "U", category: "ER", simple: "Industrial relations perspective assuming shared harmony between employers and employees.", academic: "Single-source authority model." }
+            { term: "Human Resource Management", letter: "H", category: "Core HRM", simple: "Strategic management of an organization's people.", academic: "Systematic formal systems for managing human capital (Armstrong, 2020)." },
+            { term: "Employment Relations", letter: "E", category: "ER", simple: "The study of workplace relationships between workers and employers.", academic: "Governance of labor interactions and employment contracts." },
+            { term: "Collective Bargaining", letter: "C", category: "ER", simple: "Negotiation between union leaders and employers on work terms.", academic: "Bilateral agreement process establishing CBAs." },
+            { term: "Constructive Dismissal", letter: "C", category: "Labour Law", simple: "Resignation caused by employer making conditions unbearable.", academic: "Fundamental breach of contract forcing employee resignation." }
         ];
 
         function populateAlphabetBar() {
@@ -492,6 +379,64 @@
         populateAlphabetBar();
         renderDictionary(dictionaryTerms);
 
+        const quizData = [
+            {
+                category: "NIGERIAN LABOUR ACT",
+                question: "Under Section 7 of the Labour Act Cap L1, within how long must an employer provide a written statement of terms?",
+                options: ["14 Days", "1 Month", "3 Months", "6 Months"],
+                correct: 2,
+                explanation: "Section 7 mandates a written statement of terms within 3 months of employment."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuizIndex];
+            if(!q) return;
+            document.getElementById('quizCategoryBadge').innerText = q.category;
+            document.getElementById('quizProgress').innerText = `Question ${currentQuizIndex + 1} of ${quizData.length}`;
+            document.getElementById('quizQuestionText').innerText = q.question;
+            document.getElementById('quizExplanationBox').classList.add('hidden');
+            document.getElementById('quizNextBtn').classList.add('hidden');
+
+            const optContainer = document.getElementById('quizOptionsContainer');
+            optContainer.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                optContainer.innerHTML += `
+                    <button onclick="selectQuizOption(${idx})" class="w-full text-left bg-lightBg border border-slate-300 hover:border-gold p-3 rounded-lg text-sm font-medium transition quiz-option-btn">
+                        ${opt}
+                    </button>
+                `;
+            });
+        }
+
+        function selectQuizOption(selectedIndex) {
+            const q = quizData[currentQuizIndex];
+            const buttons = document.querySelectorAll('.quiz-option-btn');
+            
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                if(idx === q.correct) {
+                    btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                } else if(idx === selectedIndex) {
+                    btn.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                }
+            });
+
+            const expBox = document.getElementById('quizExplanationBox');
+            expBox.classList.remove('hidden');
+            if(selectedIndex === q.correct) {
+                expBox.className = "p-4 rounded-lg mb-4 text-sm bg-emerald-50 text-emerald-900 border border-emerald-200 font-medium";
+                expBox.innerHTML = `<strong>Correct!</strong> ${q.explanation}`;
+            } else {
+                expBox.className = "p-4 rounded-lg mb-4 text-sm bg-rose-50 text-rose-900 border border-rose-200 font-medium";
+                expBox.innerHTML = `<strong>Incorrect.</strong> ${q.explanation}`;
+            }
+        }
+
+        loadQuiz();
+
         function calculateTurnover() {
             const sep = parseFloat(document.getElementById('calcSeparations').value);
             const avg = parseFloat(document.getElementById('calcAvgEmployees').value);
@@ -512,10 +457,6 @@
             res.innerHTML = `Absenteeism Rate: <span class="text-gold font-bold">${rate}%</span>`;
         }
 
-        function downloadTemplate(name) {
-            alert(`Template text for "${name}" ready.`);
-        }
-
         function sendAIMessage() {
             const input = document.getElementById('aiInput');
             const chatWindow = document.getElementById('aiChatWindow');
@@ -527,16 +468,22 @@
             chatWindow.scrollTop = chatWindow.scrollHeight;
 
             setTimeout(() => {
-                let aiReply = "In global human capital management, balancing strategic HRM practices with comprehensive Employment Relations statutory compliance ensures organizational stability and workforce equity.";
-                if(userText.toLowerCase().includes('history') || userText.toLowerCase().includes('taylor')) {
-                    aiReply = "F.W. Taylor's Scientific Management (1911) pioneered time-and-motion task efficiency, which later balanced out with Elton Mayo's Hawthorne Studies emphasizing the human social element.";
-                } else if(userText.toLowerCase().includes('us') || userText.toLowerCase().includes('at-will')) {
-                    aiReply = "Unlike Nigeria or the UK where termination requires valid procedural reasons, the US relies heavily on the 'At-Will' employment doctrine, subject to anti-discrimination federal statutes like Title VII.";
+                let aiReply = "Regarding ER & HRM, decisions must align with academic management principles and statutory regulations like the Labour Act.";
+                if(userText.toLowerCase().includes('collective bargaining')) {
+                    aiReply = "Collective bargaining is a formal negotiation process between management and recognized trade unions concerning wages and working terms.";
                 }
+
                 chatWindow.innerHTML += `<div class="bg-slate-100 p-3 rounded-lg max-w-[85%] text-sm text-slate-800">${aiReply}</div>`;
-                chatWindow.scrollTop = chatWindow.scrollHeight
+                chatWindow.scrollTop = chatWindow.scrollHeight;
             }, 700);
+        }
+
+        function handleGlobalSearch(query) {
+            if(query.length > 2 && query.toLowerCase().includes('dict')) {
+                switchTab('dictionary');
+            }
         }
     </script>
 </body>
 </html>
+       
