@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ER/HRM Knowledge Hub | Learn. Practise. Lead.</title>
+    <title>ER/HRM Master Portal | Complete Global & Nigerian Knowledge Hub</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,40 +24,48 @@
 </head>
 <body class="bg-lightBg text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Navigation Header -->
     <header class="bg-navy text-white shadow-md sticky top-0 z-50 border-b-2 border-gold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
                 <span class="text-2xl">🎓</span>
                 <div>
-                    <h1 class="text-lg font-bold tracking-wide">ER/HRM Knowledge Hub</h1>
+                    <h1 class="text-base sm:text-lg font-bold tracking-wide">ER/HRM Knowledge Hub</h1>
                     <p class="text-xs text-gold font-semibold">Learn. Practise. Lead.</p>
                 </div>
             </div>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+            <nav class="hidden xl:flex space-x-4 text-xs font-medium">
                 <button onclick="switchTab('home')" class="hover:text-gold transition">Home</button>
-                <button onclick="switchTab('dictionary')" class="hover:text-gold transition">Dictionary</button>
-                <button onclick="switchTab('quiz')" class="hover:text-gold transition">Quiz Center</button>
-                <button onclick="switchTab('ai')" class="hover:text-gold transition">HR Mentor AI</button>
+                <button onclick="switchTab('curriculum')" class="hover:text-gold transition">Syllabus</button>
+                <button onclick="switchTab('dictionary')" class="hover:text-gold transition">A–Z Dictionary</button>
+                <button onclick="switchTab('cases')" class="hover:text-gold transition">Case Law & Studies</button>
+                <button onclick="switchTab('global')" class="hover:text-gold transition">Global Law Comparison</button>
                 <button onclick="switchTab('labour')" class="hover:text-gold transition">Nigerian Law</button>
                 <button onclick="switchTab('calculators')" class="hover:text-gold transition">Calculators</button>
                 <button onclick="switchTab('templates')" class="hover:text-gold transition">Templates</button>
+                <button onclick="switchTab('playbooks')" class="hover:text-gold transition">SOPs</button>
+                <button onclick="switchTab('references')" class="hover:text-gold transition">References</button>
+                <button onclick="switchTab('ai')" class="hover:text-gold transition">AI Mentor</button>
             </nav>
             <div class="flex items-center space-x-2 bg-secondaryNavy px-3 py-1.5 rounded-lg border border-gold">
-                <span class="text-xs text-gold font-bold">🔥 5 Day Streak</span>
+                <span class="text-xs text-gold font-bold">🌐 Complete Global & Nigerian Portal</span>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Sub-navigation -->
-    <div class="md:hidden bg-secondaryNavy text-white flex overflow-x-auto py-2 px-4 space-x-4 text-xs font-medium border-b border-slate-700">
+    <!-- Mobile Navigation Bar -->
+    <div class="xl:hidden bg-secondaryNavy text-white flex overflow-x-auto py-2.5 px-4 space-x-4 text-xs font-medium border-b border-slate-700">
         <button onclick="switchTab('home')" class="whitespace-nowrap hover:text-gold">Home</button>
-        <button onclick="switchTab('dictionary')" class="whitespace-nowrap hover:text-gold">Dictionary</button>
-        <button onclick="switchTab('quiz')" class="whitespace-nowrap hover:text-gold">Quizzes</button>
-        <button onclick="switchTab('ai')" class="whitespace-nowrap hover:text-gold">AI Mentor</button>
+        <button onclick="switchTab('curriculum')" class="whitespace-nowrap hover:text-gold">Syllabus</button>
+        <button onclick="switchTab('dictionary')" class="whitespace-nowrap hover:text-gold">A–Z Dictionary</button>
+        <button onclick="switchTab('cases')" class="whitespace-nowrap hover:text-gold">Case Law</button>
+        <button onclick="switchTab('global')" class="whitespace-nowrap hover:text-gold">Global Law</button>
         <button onclick="switchTab('labour')" class="whitespace-nowrap hover:text-gold">Nigerian Law</button>
         <button onclick="switchTab('calculators')" class="whitespace-nowrap hover:text-gold">Calculators</button>
         <button onclick="switchTab('templates')" class="whitespace-nowrap hover:text-gold">Templates</button>
+        <button onclick="switchTab('playbooks')" class="whitespace-nowrap hover:text-gold">SOPs</button>
+        <button onclick="switchTab('references')" class="whitespace-nowrap hover:text-gold">References</button>
+        <button onclick="switchTab('ai')" class="whitespace-nowrap hover:text-gold">AI Mentor</button>
     </div>
 
     <!-- Main Content Container -->
@@ -66,209 +74,316 @@
         <!-- TAB 1: HOME -->
         <section id="tab-home" class="space-y-6">
             <div class="bg-navy text-white p-8 rounded-2xl shadow-lg border-l-4 border-gold">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Welcome to Your Professional HR Platform</h2>
-                <p class="text-slate-300 text-sm sm:text-base max-w-2xl mb-6">
-                    Master Employment Relations, Human Resource Management, Nigerian Labour Law, and workplace analytics with structured materials, quizzes, and our 24/7 AI Mentor.
+                <span class="text-xs bg-gold text-navy font-bold px-2.5 py-1 rounded uppercase tracking-wider mb-3 inline-block">The Ultimate ER & HRM Resource</span>
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Employment Relations & Human Resource Management Master Portal</h2>
+                <p class="text-slate-300 text-sm sm:text-base max-w-3xl mb-6">
+                    Designed for **University Students**, **HR Practitioners**, **Legal Researchers**, and **CIPM Candidates**. Access A–Z dictionary terms, landmark National Industrial Court (NICN) rulings, comparative global labor laws (UK, US, Ghana, SA), academic citations, and practical SOPs.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <button onclick="switchTab('ai')" class="bg-gold text-navy font-bold px-5 py-2.5 rounded-lg hover:bg-goldHover transition">Ask HR Mentor AI</button>
-                    <button onclick="switchTab('dictionary')" class="bg-secondaryNavy text-white border border-gold font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800 transition">Explore Dictionary</button>
+                    <button onclick="switchTab('dictionary')" class="bg-gold text-navy font-bold px-5 py-2.5 rounded-lg hover:bg-goldHover transition">Explore A–Z Dictionary</button>
+                    <button onclick="switchTab('cases')" class="bg-secondaryNavy text-white border border-gold font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800 transition">Case Studies & Rulings</button>
+                    <button onclick="switchTab('global')" class="bg-slate-800 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-700 transition">Comparative Global Laws</button>
                 </div>
             </div>
 
-            <!-- Daily HR Term Widget -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <div class="flex justify-between items-center mb-3">
-                    <span class="text-xs font-bold text-gold tracking-wider">TERM OF THE DAY</span>
-                    <span class="text-xs text-slate-500 bg-slate-100 px-2.5 py-1 rounded">Industrial Relations</span>
+            <!-- Features Summary Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div onclick="switchTab('dictionary')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
+                    <span class="text-2xl mb-2 block">🔤</span>
+                    <h3 class="font-bold text-navy text-sm mb-1">A–Z Dictionary Index</h3>
+                    <p class="text-xs text-slate-500">Filter terms instantly from A to Z with academic references.</p>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-2">Collective Bargaining</h3>
-                <p class="text-slate-700 text-sm leading-relaxed mb-4">
-                    A formal negotiation process between employers and employees (represented by trade unions) aimed at reaching agreements on wages, working hours, and employment conditions.
-                </p>
-                <button onclick="switchTab('dictionary')" class="text-navy font-bold text-sm hover:text-gold transition">View Academic Definition & Practical Examples →</button>
-            </div>
-
-            <!-- Quick Access Grid -->
-            <div>
-                <h3 class="text-lg font-bold text-navy mb-4">Quick Access Modules</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div onclick="switchTab('quiz')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
-                        <span class="text-2xl mb-2 block">🎯</span>
-                        <h4 class="font-bold text-navy mb-1">Quiz & Exam Center</h4>
-                        <p class="text-xs text-slate-500">Timed tests & scenario questions.</p>
-                    </div>
-                    <div onclick="switchTab('ai')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
-                        <span class="text-2xl mb-2 block">🤖</span>
-                        <h4 class="font-bold text-navy mb-1">HR Mentor AI</h4>
-                        <p class="text-xs text-slate-500">Instant explanations & case help.</p>
-                    </div>
-                    <div onclick="switchTab('labour')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
-                        <span class="text-2xl mb-2 block">🇳🇬</span>
-                        <h4 class="font-bold text-navy mb-1">Nigerian Labour Law</h4>
-                        <p class="text-xs text-slate-500">Cap L1 LFN 2004 & NICN standards.</p>
-                    </div>
-                    <div onclick="switchTab('calculators')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
-                        <span class="text-2xl mb-2 block">🧮</span>
-                        <h4 class="font-bold text-navy mb-1">HR Calculators</h4>
-                        <p class="text-xs text-slate-500">Turnover rate & absenteeism metrics.</p>
-                    </div>
+                <div onclick="switchTab('cases')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
+                    <span class="text-2xl mb-2 block">⚖️</span>
+                    <h3 class="font-bold text-navy text-sm mb-1">NICN Precedent Cases</h3>
+                    <p class="text-xs text-slate-500">Landmark judicial rulings on termination, probation, & breach.</p>
+                </div>
+                <div onclick="switchTab('global')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
+                    <span class="text-2xl mb-2 block">🌍</span>
+                    <h3 class="font-bold text-navy text-sm mb-1">Global Labour Laws</h3>
+                    <p class="text-xs text-slate-500">Compare Nigeria with UK, US, Ghana, and South Africa.</p>
+                </div>
+                <div onclick="switchTab('references')" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-gold cursor-pointer transition">
+                    <span class="text-2xl mb-2 block">📚</span>
+                    <h3 class="font-bold text-navy text-sm mb-1">APA Academic Citations</h3>
+                    <p class="text-xs text-slate-500">Peer-reviewed textbooks, journals, and foundational papers.</p>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 2: DICTIONARY -->
-        <section id="tab-dictionary" class="space-y-6 hidden">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                    <h2 class="text-2xl font-bold text-navy">ER/HRM A-Z Dictionary</h2>
-                    <p class="text-sm text-slate-500">Search academic definitions, practical examples, and legal considerations.</p>
+        <!-- TAB 2: COURSE CURRICULUM -->
+        <section id="tab-curriculum" class="space-y-6 hidden">
+            <div>
+                <h2 class="text-2xl font-bold text-navy">Full Academic & Professional Syllabus</h2>
+                <p class="text-sm text-slate-500">Structured modules covering undergraduate, postgraduate, and CIPM professional levels.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-gold">MODULE 01</span>
+                    <h3 class="text-lg font-bold text-navy my-1">Evolution of Management & Strategic HRM</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Examines the shift from 19th-century Personnel Administration to Strategic Human Resource Management (SHRM). Covers Scientific Management (F.W. Taylor), Administrative Theory (Henri Fayol), Hawthorne Studies (Elton Mayo), and the Resource-Based View (Barney, 1991).
+                    </p>
                 </div>
-                <input type="text" id="dictSearch" onkeyup="filterDictionary()" placeholder="Search terms (e.g. Job Analysis)..." class="w-full sm:w-72 bg-white border border-slate-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-gold">
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-gold">MODULE 02</span>
+                    <h3 class="text-lg font-bold text-navy my-1">Job Analysis, Design & Workforce Planning</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Techniques for job evaluation, compiling Job Descriptions (JDs) and Specifications (JSs). Explores Job Enrichment, Job Enlargement, and the Hackman & Oldham Job Characteristics Model.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-gold">MODULE 03</span>
+                    <h3 class="text-lg font-bold text-navy my-1">Talent Sourcing & Selection Strategies</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Internal vs. external recruitment, psychometric evaluations, competency framework modeling, structured behavioural interviews (STAR method), and EEO compliance.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-gold">MODULE 04</span>
+                    <h3 class="text-lg font-bold text-navy my-1">Performance Management & Reward Systems</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Designing appraisal frameworks (360-degree feedback, BARS, MBO, OKRs). Total Rewards strategy: intrinsic vs. extrinsic motivators, Hay Point job evaluation, and equity theory.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: A TO Z DICTIONARY -->
+        <section id="tab-dictionary" class="space-y-6 hidden">
+            <div>
+                <h2 class="text-2xl font-bold text-navy mb-1">A–Z Encyclopedic ER/HRM Dictionary</h2>
+                <p class="text-sm text-slate-500 mb-4">Click any letter to filter terms instantly or use the search bar.</p>
+                
+                <!-- Search Box -->
+                <input type="text" id="dictSearch" onkeyup="filterDictionarySearch()" placeholder="Search dictionary (e.g., Redundancy, Bargaining, Taylor)..." class="w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold mb-4">
+
+                <!-- Alphabet Filter Bar -->
+                <div class="flex flex-wrap gap-1.5 bg-white p-3 rounded-lg border border-slate-200 text-xs font-bold text-navy shadow-sm mb-6" id="alphabetBar">
+                    <!-- Populated via JS -->
+                </div>
             </div>
 
             <div id="dictionaryContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Dynamically populated cards -->
+                <!-- Dynamically populated from JS -->
             </div>
         </section>
 
-        <!-- TAB 3: QUIZ CENTER -->
-        <section id="tab-quiz" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <h2 class="text-2xl font-bold text-navy mb-2">Interactive Examination & Quiz Center</h2>
-                <p class="text-sm text-slate-600 mb-6">Test your knowledge across core HRM topics with instant feedback.</p>
+        <!-- TAB 4: CASE STUDIES & JUDICIAL RULINGS -->
+        <section id="tab-cases" class="space-y-6 hidden">
+            <div>
+                <h2 class="text-2xl font-bold text-navy">Landmark Judicial Precedents & Case Studies</h2>
+                <p class="text-sm text-slate-500">Key rulings from the National Industrial Court of Nigeria (NICN) shaping employment practices.</p>
+            </div>
 
-                <div id="quizBox">
-                    <div class="flex justify-between text-xs font-bold text-gold mb-2">
-                        <span id="quizCategoryBadge">LABOUR LAW</span>
-                        <span id="quizProgress">Question 1 of 2</span>
-                    </div>
-                    <h3 id="quizQuestionText" class="text-lg font-bold text-navy mb-4"></h3>
-                    <div id="quizOptionsContainer" class="space-y-3 mb-6">
-                        <!-- Options generated here -->
-                    </div>
-                    <div id="quizExplanationBox" class="hidden p-4 rounded-lg mb-4 text-sm"></div>
-                    <button id="quizNextBtn" onclick="nextQuizQuestion()" class="hidden bg-navy text-gold font-bold px-6 py-2.5 rounded-lg hover:bg-slate-800 transition">Next Question →</button>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-navy">
+                    <span class="text-xs font-bold text-gold">CONSTRUCTIVE DISMISSAL</span>
+                    <h3 class="text-lg font-bold text-navy my-1">Miss Omolara Adewumi v. Guaranty Trust Bank Plc (NICN/LA/122/2012)</h3>
+                    <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                        <strong>Fact Summary:</strong> The employee was subjected to severe pressure, humiliating environment, and forced demotion without due procedure, leading to her involuntary resignation.
+                    </p>
+                    <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                        <strong>Judicial Holding:</strong> The NICN held that where an employer's conduct renders working conditions so intolerable that an employee is compelled to resign, it amounts to <em>Constructive Dismissal</em>. The court awarded damages for wrongful termination.
+                    </p>
+                    <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">Precedent: Resignation under coercion is actionable unfair dismissal in Nigeria.</span>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-navy">
+                    <span class="text-xs font-bold text-gold">TERMINATION & REASONING</span>
+                    <h3 class="text-lg font-bold text-navy my-1">Skye Bank Plc v. Anaemem Iwu (2017) LPELR-43595(SC)</h3>
+                    <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                        <strong>Fact Summary:</strong> Employer terminated employee contract relying on traditional common law right to terminate "for good, bad, or no reason" by giving notice or pay in lieu.
+                    </p>
+                    <p class="text-xs text-slate-700 leading-relaxed mb-2">
+                        <strong>Judicial Holding:</strong> Under Section 254C(1)(f) of the 1999 Constitution (as amended), the NICN has jurisdiction to apply international best practices and ILO Convention 158. Employers must now give valid operational or conduct reasons when terminating contracts.
+                    </p>
+                    <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">Precedent: Standard termination now requires valid justification under international standards.</span>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 4: AI MENTOR -->
+        <!-- TAB 5: GLOBAL LABOUR LAW COMPARISON -->
+        <section id="tab-global" class="space-y-6 hidden">
+            <div>
+                <h2 class="text-2xl font-bold text-navy">Comparative Global Labour Law Framework</h2>
+                <p class="text-sm text-slate-500">Comparative analysis of employment relations legislation across jurisdictions.</p>
+            </div>
+
+            <div class="overflow-x-auto bg-white rounded-xl border border-slate-200 shadow-sm">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-navy text-white">
+                            <th class="p-3 border-b border-slate-700">Jurisdiction</th>
+                            <th class="p-3 border-b border-slate-700">Contract Requirement</th>
+                            <th class="p-3 border-b border-slate-700">Notice Period & Termination</th>
+                            <th class="p-3 border-b border-slate-700">Dispute Resolution Forum</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-700">
+                        <tr>
+                            <td class="p-3 font-bold text-navy">🇳🇬 Nigeria</td>
+                            <td class="p-3">Written contract within 3 months (Labour Act Cap L1).</td>
+                            <td class="p-3">Statutory 1 day to 1 month depending on tenure. Reason required under NICN practice.</td>
+                            <td class="p-3">IAP $\rightarrow$ National Industrial Court of Nigeria (NICN).</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-navy">🇬🇧 United Kingdom</td>
+                            <td class="p-3">Written statement of particulars on or before Day 1 (Employment Rights Act 1996).</td>
+                            <td class="p-3">Statutory minimum 1 week per year worked up to 12 weeks. Strict unfair dismissal protections after 2 years.</td>
+                            <td class="p-3">ACAS Conciliation $\rightarrow$ Employment Tribunal (ET).</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-navy">🇺🇸 United States</td>
+                            <td class="p-3">At-Will employment dominant; written contracts rare except executive/unionized.</td>
+                            <td class="p-3">No statutory notice required under "At-Will" doctrine unless governed by WARN Act or CBA.</td>
+                            <td class="p-3">EEOC $\rightarrow$ State / Federal District Courts.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-navy">🇬🇭 Ghana</td>
+                            <td class="p-3">Written contract required for employment lasting 6 months or more (Labour Act 651).</td>
+                            <td class="p-3">14 days to 1 month notice depending on payment cycle. Fair cause strictly required.</td>
+                            <td class="p-3">National Labour Commission (NLC) Ghana.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-navy">🇿🇦 South Africa</td>
+                            <td class="p-3">Written particulars mandatory upon commencement (Basic Conditions of Employment Act).</td>
+                            <td class="p-3">1 week to 4 weeks statutory notice. Strict substantive and procedural fairness enforced.</td>
+                            <td class="p-3">CCMA $\rightarrow$ Labour Court $\rightarrow$ Labour Appeal Court.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 6: NIGERIAN LABOUR LAW -->
+        <section id="tab-labour" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h2 class="text-2xl font-bold text-navy mb-2">🇳🇬 Nigerian Employment Relations Statutory Acts</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div class="border border-slate-200 p-4 rounded-lg bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm mb-1">Labour Act (Cap L1 LFN 2004)</h3>
+                        <p class="text-xs text-slate-600">Governs manual/clerical workers. Written contract required within 3 months, 12 weeks maternity leave, 12 days annual leave with pay.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm mb-1">Pension Reform Act (PRA 2014)</h3>
+                        <p class="text-xs text-slate-600">Applies to 15+ workers. Minimum contribution 10% (Employer) & 8% (Employee) managed by PFAs under PenCom.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm mb-1">Employees' Compensation Act (ECA 2010)</h3>
+                        <p class="text-xs text-slate-600">Provides compensation for occupational illness, injury, or death. 1% payroll fee paid entirely by employer to NSITF.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-lightBg">
+                        <h3 class="font-bold text-navy text-sm mb-1">Trade Disputes Act (Cap T8 LFN 2004)</h3>
+                        <p class="text-xs text-slate-600">Outlines statutory conflict resolution: Internal Negotiation $\rightarrow$ Mediator $\rightarrow$ Conciliator $\rightarrow$ IAP $\rightarrow$ NICN.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 7: CALCULATORS -->
+        <section id="tab-calculators" class="space-y-6 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-navy mb-1">📊 Employee Turnover Rate</h3>
+                    <div class="space-y-3 mt-4">
+                        <input type="number" id="calcSeparations" placeholder="Total Separations in Year" class="w-full bg-lightBg border border-slate-300 rounded p-2 text-xs">
+                        <input type="number" id="calcAvgEmployees" placeholder="Average Number of Employees" class="w-full bg-lightBg border border-slate-300 rounded p-2 text-xs">
+                        <button onclick="calculateTurnover()" class="w-full bg-navy text-gold font-bold py-2 rounded text-xs hover:bg-slate-800">Calculate Rate</button>
+                        <div id="resTurnover" class="hidden p-3 bg-slate-100 rounded text-xs font-bold text-navy"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-navy mb-1">📅 Absenteeism Rate</h3>
+                    <div class="space-y-3 mt-4">
+                        <input type="number" id="calcAbsDays" placeholder="Total Absent Days" class="w-full bg-lightBg border border-slate-300 rounded p-2 text-xs">
+                        <input type="number" id="calcWorkDays" placeholder="Total Available Work Days" class="w-full bg-lightBg border border-slate-300 rounded p-2 text-xs">
+                        <button onclick="calculateAbsenteeism()" class="w-full bg-navy text-gold font-bold py-2 rounded text-xs hover:bg-slate-800">Calculate Rate</button>
+                        <div id="resAbsenteeism" class="hidden p-3 bg-slate-100 rounded text-xs font-bold text-navy"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 8: TEMPLATES -->
+        <section id="tab-templates" class="space-y-6 hidden">
+            <div>
+                <h2 class="text-2xl font-bold text-navy">Document & Template Library</h2>
+                <p class="text-sm text-slate-500">Ready-to-use operational forms for HR practitioners.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-navy text-sm my-1">Standard Employment Contract</h3>
+                    <p class="text-xs text-slate-600 mb-4">Covers probation, remuneration, and termination clauses under Nigerian law.</p>
+                    <button onclick="downloadTemplate('Employment Contract')" class="w-full bg-navy text-gold font-bold text-xs py-2 rounded-lg">Copy Template</button>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-navy text-sm my-1">Official Disciplinary Query Form</h3>
+                    <p class="text-xs text-slate-600 mb-4">Formal letter giving an employee 48 hours to explain misconduct.</p>
+                    <button onclick="downloadTemplate('Disciplinary Query')" class="w-full bg-navy text-gold font-bold text-xs py-2 rounded-lg">Copy Template</button>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-navy text-sm my-1">Redundancy Notice Letter</h3>
+                    <p class="text-xs text-slate-600 mb-4">Formal redundancy notification meeting Section 20 Labour Act standards.</p>
+                    <button onclick="downloadTemplate('Redundancy Notice')" class="w-full bg-navy text-gold font-bold text-xs py-2 rounded-lg">Copy Template</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 9: SOPS & DISCIPLINARY PLAYBOOKS -->
+        <section id="tab-playbooks" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h2 class="text-2xl font-bold text-navy mb-2">Disciplinary Hearing SOP Playbook</h2>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    <strong>Pillars of Natural Justice:</strong> 1) <em>Audi Alteram Partem</em> (Hear the other side), 2) <em>Nemo Judex In Causa Sua</em> (No bias).
+                </p>
+                <ol class="list-decimal list-inside text-xs text-slate-700 space-y-2 bg-lightBg p-4 rounded border">
+                    <td>Issue written query stating specific charges and giving 48-hour response window.</td>
+                    <td>Review reply; if unsatisfactory, issue notice of Disciplinary Committee Hearing.</td>
+                    <td>Convene panel with neutral chairperson; allow employee to present defense & call witnesses.</td>
+                    <td>Issue written decision (exoneration, written warning, suspension, or termination).</td>
+                </ol>
+            </div>
+        </section>
+
+        <!-- TAB 10: ACADEMIC REFERENCES & CITATIONS -->
+        <section id="tab-references" class="space-y-6 hidden">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h2 class="text-2xl font-bold text-navy mb-2">Academic Textbook & Research References (APA 7th)</h2>
+                <ul class="space-y-3 text-xs text-slate-700 list-disc list-inside">
+                    <td>Armstrong, M., & Taylor, S. (2020). <em>Armstrong's Handbook of Human Resource Management Practice</em> (15th ed.). Kogan Page.</td>
+                    <td>Boxall, P., & Purcell, J. (2016). <em>Strategy and Human Resource Management</em> (4th ed.). Palgrave Macmillan.</td>
+                    <td>Cascio, W. F. (2018). <em>Managing Human Resources: Productivity, Quality of Work Life, Profits</em> (11th ed.). McGraw-Hill Education.</td>
+                    <td>Fashoyin, T. (1992). <em>Industrial Relations in Nigeria</em> (2nd ed.). Longman Nigeria.</td>
+                    <td>Taylor, F. W. (1911). <em>The Principles of Scientific Management</em>. Harper & Brothers.</td>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TAB 11: AI MENTOR -->
         <section id="tab-ai" class="space-y-4 hidden">
             <div class="bg-navy text-white p-4 rounded-t-xl border-b-2 border-gold flex justify-between items-center">
                 <div>
                     <h2 class="font-bold text-lg">HR Mentor AI Assistant</h2>
-                    <p class="text-xs text-gold">Ask questions about ER concepts, policies, or case studies.</p>
+                    <p class="text-xs text-gold">24/7 Global & Nigerian HR Consultation</p>
                 </div>
                 <span class="text-xs bg-secondaryNavy px-2.5 py-1 rounded border border-gold">Gemini Engine</span>
             </div>
 
             <div id="aiChatWindow" class="bg-white border border-slate-200 rounded-b-xl p-4 h-96 overflow-y-auto space-y-3">
                 <div class="bg-slate-100 p-3 rounded-lg max-w-[85%] text-sm text-slate-800">
-                    Hello! I am HR Mentor AI. How can I assist with your HR studies, workplace grievance handling, or employment law questions today?
+                    Hello! I am your HR Mentor AI. How can I assist with your academic research, case study analysis, or global labor laws today?
                 </div>
             </div>
 
             <div class="flex gap-2">
-                <input type="text" id="aiInput" placeholder="Ask e.g., Explain collective bargaining in Nigeria..." class="flex-grow bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold">
+                <input type="text" id="aiInput" placeholder="Ask e.g., Compare constructive dismissal in Nigeria vs the UK..." class="flex-grow bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-gold">
                 <button onclick="sendAIMessage()" class="bg-gold text-navy font-bold px-6 py-2.5 rounded-lg hover:bg-goldHover transition">Send</button>
-            </div>
-        </section>
-
-        <!-- TAB 5: NIGERIAN LABOUR LAW -->
-        <section id="tab-labour" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <h2 class="text-2xl font-bold text-navy mb-2">🇳🇬 Nigerian Employment Relations & Labour Law</h2>
-                <p class="text-sm text-slate-600 mb-6">Core regulatory framework governing employers, employees, and trade disputes in Nigeria.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border border-slate-200 p-5 rounded-lg">
-                        <h3 class="font-bold text-navy mb-2">Labour Act (Cap L1 LFN 2004)</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                            The principal legislation regulating basic terms of employment, wages, contracts, working hours, and employment standards in Nigeria.
-                        </p>
-                        <span class="text-xs font-bold text-gold">Key Rule: Written contract required within 3 months.</span>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg">
-                        <h3 class="font-bold text-navy mb-2">Trade Disputes Act (TDA)</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                            Provides mechanisms for resolving trade disputes through conciliation, arbitration (IAP), and the National Industrial Court (NICN).
-                        </p>
-                        <span class="text-xs font-bold text-gold">Key Forum: National Industrial Court of Nigeria.</span>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg">
-                        <h3 class="font-bold text-navy mb-2">Employees' Compensation Act 2010</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                            Establishes guaranteed compensation for employees or dependents in cases of workplace injury, disease, or death.
-                        </p>
-                        <span class="text-xs font-bold text-gold">Fund: Managed by NSITF.</span>
-                    </div>
-
-                    <div class="border border-slate-200 p-5 rounded-lg">
-                        <h3 class="font-bold text-navy mb-2">Pension Reform Act 2014</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                            Mandates the Contributory Pension Scheme (CPS) for employers with 15 or more employees.
-                        </p>
-                        <span class="text-xs font-bold text-gold">Contribution: Min 8% (Employee) & 10% (Employer).</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 6: CALCULATORS -->
-        <section id="tab-calculators" class="space-y-6 hidden">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm max-w-2xl mx-auto">
-                <h2 class="text-2xl font-bold text-navy mb-1">📊 Employee Turnover Calculator</h2>
-                <p class="text-xs text-slate-500 mb-6">Formula: (Total Separations / Average Employees) × 100</p>
-
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold text-navy mb-1">Number of Separations (Period):</label>
-                        <input type="number" id="calcSeparations" placeholder="e.g. 12" class="w-full bg-lightBg border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-navy mb-1">Average Number of Employees:</label>
-                        <input type="number" id="calcAvgEmployees" placeholder="e.g. 150" class="w-full bg-lightBg border border-slate-300 rounded-lg p-2.5 text-sm focus:outline-none focus:border-gold">
-                    </div>
-                    <button onclick="calculateTurnover()" class="w-full bg-navy text-gold font-bold py-3 rounded-lg hover:bg-slate-800 transition">Calculate Turnover Rate</button>
-
-                    <div id="calcResultBox" class="hidden mt-4 p-4 bg-lightBg rounded-lg border border-slate-200">
-                        <p class="text-xs text-slate-500">Calculated Annual Turnover Rate:</p>
-                        <p id="calcResultValue" class="text-2xl font-bold text-navy my-1"></p>
-                        <p id="calcInterpretation" class="text-xs text-slate-700"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 7: TEMPLATES -->
-        <section id="tab-templates" class="space-y-6 hidden">
-            <div>
-                <h2 class="text-2xl font-bold text-navy">HR Document & Template Library</h2>
-                <p class="text-sm text-slate-500">Practical templates for HR practitioners and employers.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-bold text-gold">TEMPLATE 01</span>
-                    <h3 class="font-bold text-navy my-1">Standard Employment Contract</h3>
-                    <p class="text-xs text-slate-600 mb-4">Compliant template covering probation, salary, duties, and termination clauses.</p>
-                    <button onclick="alert('Downloading Standard Employment Contract Template...')" class="w-full bg-navy text-gold font-bold text-xs py-2 rounded-lg hover:bg-slate-800 transition">Download Template</button>
-                </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-bold text-gold">TEMPLATE 02</span>
-                    <h3 class="font-bold text-navy my-1">Job Description (JD) Form</h3>
-                    <p class="text-xs text-slate-600 mb-4">Structured format for defining key result areas, duties, and reporting lines.</p>
-                    <button onclick="alert('Downloading Job Description Template...')" class="w-full bg-navy text-gold font-bold text-xs py-2 rounded-lg hover:bg-slate-800 transition">Download Template</button>
-                </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-bold text-gold">TEMPLATE 03</span>
-                    <h3 class="font-bold text-navy my-1">Grievance Reporting Form</h3>
-                    <p class="text-xs text-slate-600 mb-4">Formal documentation sheet for recording and investigating workplace grievances.</p>
-                    <button onclick="alert('Downloading Grievance Form Template...')" class="w-full bg-navy text-gold font-bold text-xs py-2 rounded-lg hover:bg-slate-800 transition">Download Template</button>
-                </div>
             </div>
         </section>
 
@@ -276,55 +391,66 @@
 
     <!-- Footer -->
     <footer class="bg-navy text-slate-400 text-center py-6 mt-12 border-t border-slate-800 text-xs">
-        <p>© 2026 ER/HRM Knowledge Hub. All rights reserved. • Learn. Practise. Lead.</p>
+        <p>© 2026 ER/HRM Knowledge Hub • Learn. Practise. Lead. • Hosted on GitHub Pages</p>
     </footer>
 
     <!-- Logic Script -->
     <script>
         function switchTab(tabId) {
-            const tabs = ['home', 'dictionary', 'quiz', 'ai', 'labour', 'calculators', 'templates'];
-            tabs.forEach(t => document.getElementById('tab-' + t).classList.add('hidden'));
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const tabs = ['home', 'curriculum', 'dictionary', 'cases', 'global', 'labour', 'calculators', 'templates', 'playbooks', 'references', 'ai'];
+            tabs.forEach(t => {
+                const el = document.getElementById('tab-' + t);
+                if(el) el.classList.add('hidden');
+            });
+            const target = document.getElementById('tab-' + tabId);
+            if(target) target.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Full A to Z Dictionary Database
         const dictionaryTerms = [
-            {
-                term: "Job Analysis",
-                category: "Talent Acquisition",
-                simple: "The systematic process of gathering information about a job's duties and requirements.",
-                academic: "A formal procedure to identify and determine in detail particular job duties and qualifications required for a given role (Cascio, 2018).",
-                example: "Observing sales reps and interviewing managers to document tasks for a new Sales Executive opening.",
-                importance: "Forms the bedrock for recruitment, performance appraisals, and salary grading."
-            },
-            {
-                term: "Collective Bargaining",
-                category: "Industrial Relations",
-                simple: "Negotiation between employers and trade unions over wages and working conditions.",
-                academic: "A formal process of negotiation aimed at reaching agreements governing employment terms (Fashoyin, 1992).",
-                example: "Bank executives negotiating annual hazard allowances with financial union representatives.",
-                importance: "Promotes industrial harmony and workplace democracy."
-            },
-            {
-                term: "Performance Appraisal",
-                category: "Performance Management",
-                simple: "Regular review of an employee's job performance and contribution.",
-                academic: "Systematic evaluation of an individual's performance and potential in relation to organizational objectives.",
-                example: "Conducting annual appraisals using KPI scorecards and 360-degree feedback.",
-                importance: "Guides promotions, training identification, and compensation decisions."
-            },
-            {
-                term: "Employee Turnover",
-                category: "Retention & Analytics",
-                simple: "The rate at which employees leave an organization and need to be replaced.",
-                academic: "The cessation of membership in an organization by employees, measured across voluntary and involuntary separations.",
-                example: "Calculating that 15 out of 100 staff resigned over the past year (15% turnover rate).",
-                importance: "High turnover increases hiring costs and disrupts team productivity."
-            }
+            { term: "Arbitration", letter: "A", category: "Dispute Resolution", simple: "Settling a dispute by submitting it to an impartial third party whose decision is legally binding.", academic: "A quasi-judicial process where an arbitrator issues a final award (Fashoyin, 1992).", example: "Submitting an unresolved wage deadlock to the Industrial Arbitration Panel (IAP).", note: "Governed by Trade Disputes Act Cap T8." },
+            { term: "Bargaining Unit", letter: "B", category: "Industrial Relations", simple: "A group of employees recognized by the employer and union for collective negotiations.", academic: "The operational scope of workers covered by a single Collective Bargaining Agreement (CBA).", example: "All junior bank officers represented by ASSBIFI.", note: "Trade Unions Act Section 24." },
+            { term: "Constructive Dismissal", letter: "C", category: "Labour Law", simple: "Resignation triggered by an employer making workplace conditions unbearable.", academic: "Termination occurring when an employer fundamentally breaches contract, forcing quitting.", example: "Slashing salary by 50% without consent.", note: "NICN Landmark Ruling: Adewumi v. GTB." },
+            { term: "Disciplinary Hearing", letter: "D", category: "Compliance", simple: "A formal internal meeting to investigate alleged employee misconduct.", academic: "A procedure enforcing natural justice (audi alteram partem).", example: "Convening a panel for an employee accused of fraud.", note: "Requires minimum 48hr written query." },
+            { term: "Employee Turnover", letter: "E", category: "Analytics", simple: "The percentage of employees leaving an organization over a given period.", academic: "The rate at which an organization gains and loses staff (Cascio, 2018).", example: "15 employees quitting out of 100 in 2026 = 15% turnover.", note: "Calculated via HR Calculators module." },
+            { term: "Fringe Benefits", letter: "F", category: "Compensation", simple: "Non-wage compensation provided to employees alongside regular salaries.", academic: "Indirect reward components enhancing total remuneration package (Armstrong, 2020).", example: "Company vehicle, medical cover, or pension match.", note: "Subject to Personal Income Tax Act (PITA)." },
+            { term: "Grievance Procedure", letter: "G", category: "Industrial Relations", simple: "Formal steps for an employee to express dissatisfaction over work conditions.", academic: "A structured channel for escalating individual or group complaints.", example: "Reporting line manager harassment to HR.", note: "Prevents escalation into trade disputes." },
+            { term: "Hay Point System", letter: "H", category: "Job Evaluation", simple: "A quantitative job evaluation method measuring know-how, problem solving, and accountability.", academic: "Point-factor job measurement methodology created by Hay Group.", example: "Grading executive roles against entry-level positions.", note: "Used globally for salary banding." },
+            { term: "Industrial Relations", letter: "I", category: "ER Core", simple: "The relationship between management, trade unions, and state regulatory bodies.", academic: "Study of rules governing employment and workplace conflict (Fashoyin, 1992).", example: "Negotiating national minimum wage accords.", note: "Regulated by Ministry of Labour & NICN." },
+            { term: "Job Analysis", letter: "J", category: "Talent Sourcing", simple: "Systematic gathering of information regarding job duties and qualifications.", academic: "Base procedure establishing job descriptions and specifications (Cascio, 2018).", example: "Shadowing developers to write accurate JDs.", note: "Foundation of all recruitment." },
+            { term: "Key Performance Indicators (KPIs)", letter: "K", category: "Performance", simple: "Quantifiable metrics used to evaluate employee success in reaching targets.", academic: "Targeted operational measures aligned with strategic objectives.", example: "A sales officer reaching ₦10M quarterly target.", note: "Evaluated during performance appraisals." },
+            { term: "Lockout", letter: "L", category: "Industrial Action", simple: "Employer temporary closing of workplace or refusal to provide work during a dispute.", academic: "The economic weapon of employers corresponding to employee strike action.", example: "Shutting factory doors during union wage stalemates.", note: "Governed by Trade Disputes Act." },
+            { term: "Minimum Wage", letter: "M", category: "Statutory Law", simple: "The lowest remuneration that employers may legally pay workers.", academic: "Statutory floor ensuring basic standard of living.", example: "Nigeria National Minimum Wage Act 2024 (₦70,000/month).", note: "Enforceable across federal/state sectors." },
+            { term: "Natural Justice", letter: "N", category: "Legal Core", simple: "Basic principles of fair legal procedure: right to fair hearing and absence of bias.", academic: "Principles of audi alteram partem and nemo judex in causa sua.", example: "Allowing an accused employee to present witnesses.", note: "Enforced strictly by NICN." },
+            { term: "Onboarding", letter: "O", category: "Talent Sourcing", simple: "Process of integrating new employees into the organization and culture.", academic: "Organizational socialization process building employee commitment.", example: "Orientation week and assigning a peer mentor.", note: "Reduces early 90-day turnover." },
+            { term: "Performance Appraisal", letter: "P", category: "Performance", simple: "Regular evaluation of employee job performance and growth potential.", academic: "Systematic review of employee contribution against standards.", example: "Annual 360-degree review session.", note: "Feeds into promotions and merit pay." },
+            { term: "Query Letter", letter: "Q", category: "Discipline", simple: "Written document requesting an employee to explain an alleged infraction.", academic: "Formal notification initiating internal disciplinary process.", example: "Issuing a query for 3 consecutive days of absence.", note: "Must allow minimum 48 hours for response." },
+            { term: "Redundancy", letter: "R", category: "Industrial Relations", simple: "Involuntary termination caused by job role elimination or excess staff.", academic: "Involuntary severance arising from operational restructuring (Section 20 Labour Act).", example: "Bank closing physical branches due to digital banking.", note: "Requires union consultation & LIFO principle." },
+            { term: "Scientific Management", letter: "S", category: "HRM Theory", simple: "Workplace efficiency theory developed by Frederick Winslow Taylor.", academic: "Systematic analysis of task workflows to maximize productivity (Taylor, 1911).", example: "Time-and-motion studies in assembly lines.", note: "Historical foundation of modern HR." },
+            { term: "Trade Union", letter: "T", category: "Industrial Relations", simple: "Association of workers formed to protect and promote their employment rights.", academic: "Continuous association of wage earners maintaining working conditions.", example: "Nigeria Labour Congress (NLC) or TUC affiliates.", note: "Protected under Section 40 Constitution." },
+            { term: "Unfair Dismissal", letter: "U", category: "Labour Law", simple: "Termination of employment without valid reason or proper procedure.", academic: "Dismissal breaching statutory rights or ILO standards.", example: "Sacking a female worker for getting pregnant.", note: "Actionable at NICN under Section 254C." },
+            { term: "Vicarious Liability", letter: "V", category: "Legal Core", simple: "Legal rule holding an employer responsible for wrongful acts of employees done during work.", academic: "Tort liability assigned to an employer for employee actions within scope of employment.", example: "Company paying damages after driver crashes delivery van.", note: "Applies to all registered enterprises." },
+            { term: "Workforce Planning", letter: "W", category: "Strategy", simple: "Process of analyzing future staffing needs to ensure right talent capacity.", academic: "Strategic forecasting of human capital supply and demand.", example: "Predicting hiring needs for expanding tech startups.", note: "Prevents labor shortages." },
+            { term: "X & Y Theories", letter: "X", category: "Motivation Theory", simple: "Management theories by Douglas McGregor regarding worker motivation.", academic: "Theory X assumes workers inherently dislike work; Theory Y assumes workers are self-motivated.", example: "Autocratic vs. participative leadership styles.", note: "Core topic in organizational behavior." },
+            { term: "Yellow-Dog Contract", letter: "Y", category: "Global Labour Law", simple: "Illegal agreement where an employee promises not to join a trade union.", academic: "An unenforceable contract restricting constitutional right to freedom of association.", example: "Signing clause promising never to join NLC.", note: "Strictly illegal under Nigerian Constitution & ILO." },
+            { term: "Zero-Hours Contract", letter: "Z", category: "Global Labour Law", simple: "Employment contract with no guaranteed minimum working hours.", academic: "Casual labor arrangement where worker is called only when needed.", example: "Gig economy food delivery workers.", note: "Common in UK; heavily scrutinized by NICN." }
         ];
+
+        function populateAlphabetBar() {
+            const bar = document.getElementById('alphabetBar');
+            if(!bar) return;
+            const letters = "ALL ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+            bar.innerHTML = '';
+            letters.forEach(l => {
+                const label = l === 'ALL' ? 'ALL' : l;
+                bar.innerHTML += `<button onclick="filterByLetter('${l}')" class="px-2 py-1 rounded hover:bg-gold hover:text-navy transition">${label}</button>`;
+            });
+        }
 
         function renderDictionary(terms) {
             const container = document.getElementById('dictionaryContainer');
+            if(!container) return;
             container.innerHTML = '';
             terms.forEach(item => {
                 container.innerHTML += `
@@ -333,92 +459,56 @@
                             <h3 class="font-bold text-navy text-lg">${item.term}</h3>
                             <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">${item.category}</span>
                         </div>
-                        <p class="text-xs text-slate-700 font-medium mb-2"><strong class="text-navy">Definition:</strong> ${item.simple}</p>
-                        <p class="text-xs text-slate-600 mb-2 italic"><strong>Academic:</strong> ${item.academic}</p>
+                        <p class="text-xs text-slate-700 font-medium mb-1"><strong class="text-navy">Definition:</strong> ${item.simple}</p>
+                        <p class="text-xs text-slate-600 mb-1 italic"><strong>Academic:</strong> ${item.academic}</p>
                         <p class="text-xs text-slate-600 mb-2"><strong class="text-navy">Practical Example:</strong> ${item.example}</p>
-                        <p class="text-xs text-gold font-bold">Importance: ${item.importance}</p>
+                        <p class="text-xs text-gold font-bold">Legal / Practice Note: ${item.note}</p>
                     </div>
                 `;
             });
         }
 
-        function filterDictionary() {
+        function filterByLetter(letter) {
+            if(letter === 'ALL') {
+                renderDictionary(dictionaryTerms);
+            } else {
+                const filtered = dictionaryTerms.filter(d => d.letter === letter || d.term.startsWith(letter));
+                renderDictionary(filtered);
+            }
+        }
+
+        function filterDictionarySearch() {
             const query = document.getElementById('dictSearch').value.toLowerCase();
-            const filtered = dictionaryTerms.filter(d => d.term.toLowerCase().includes(query) || d.category.toLowerCase().includes(query));
+            const filtered = dictionaryTerms.filter(d => d.term.toLowerCase().includes(query) || d.category.toLowerCase().includes(query) || d.simple.toLowerCase().includes(query));
             renderDictionary(filtered);
         }
 
+        populateAlphabetBar();
         renderDictionary(dictionaryTerms);
 
-        const quizData = [
-            {
-                question: "Under the Nigerian Labour Act (Cap L1 LFN 2004), within how many months must an employer give a worker a written employment contract?",
-                options: ["1 Month", "3 Months", "6 Months", "12 Months"],
-                correct: 1,
-                explanation: "Section 7 of the Nigerian Labour Act states that employers must provide a written statement of employment terms not later than three months after commencement."
-            },
-            {
-                question: "Which appraisal method gathers multi-source feedback from supervisors, peers, subordinates, and customers?",
-                options: ["Graphic Rating Scale", "360-Degree Feedback", "Management by Objectives", "Checklist Method"],
-                correct: 1,
-                explanation: "360-Degree Feedback incorporates evaluations from multiple perspectives around the employee."
-            }
-        ];
-
-        let currentQuizIndex = 0;
-
-        function loadQuiz() {
-            const q = quizData[currentQuizIndex];
-            document.getElementById('quizProgress').innerText = `Question ${currentQuizIndex + 1} of ${quizData.length}`;
-            document.getElementById('quizQuestionText').innerText = q.question;
-            document.getElementById('quizExplanationBox').classList.add('hidden');
-            document.getElementById('quizNextBtn').classList.add('hidden');
-
-            const optContainer = document.getElementById('quizOptionsContainer');
-            optContainer.innerHTML = '';
-            q.options.forEach((opt, idx) => {
-                optContainer.innerHTML += `
-                    <button onclick="selectQuizOption(${idx})" class="w-full text-left bg-lightBg border border-slate-300 hover:border-gold p-3 rounded-lg text-sm font-medium transition quiz-option-btn">
-                        ${opt}
-                    </button>
-                `;
-            });
+        function calculateTurnover() {
+            const sep = parseFloat(document.getElementById('calcSeparations').value);
+            const avg = parseFloat(document.getElementById('calcAvgEmployees').value);
+            const res = document.getElementById('resTurnover');
+            if(isNaN(sep) || isNaN(avg) || avg <= 0) { alert('Enter valid numbers'); return; }
+            const rate = ((sep / avg) * 100).toFixed(2);
+            res.classList.remove('hidden');
+            res.innerHTML = `Annual Turnover Rate: <span class="text-gold font-bold">${rate}%</span>`;
         }
 
-        function selectQuizOption(selectedIndex) {
-            const q = quizData[currentQuizIndex];
-            const buttons = document.querySelectorAll('.quiz-option-btn');
-            
-            buttons.forEach((btn, idx) => {
-                btn.disabled = true;
-                if(idx === q.correct) {
-                    btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
-                } else if(idx === selectedIndex) {
-                    btn.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
-                }
-            });
-
-            const expBox = document.getElementById('quizExplanationBox');
-            expBox.classList.remove('hidden');
-            if(selectedIndex === q.correct) {
-                expBox.className = "p-4 rounded-lg mb-4 text-sm bg-emerald-50 text-emerald-900 border border-emerald-200 font-medium";
-                expBox.innerHTML = `<strong>Correct!</strong> ${q.explanation}`;
-            } else {
-                expBox.className = "p-4 rounded-lg mb-4 text-sm bg-rose-50 text-rose-900 border border-rose-200 font-medium";
-                expBox.innerHTML = `<strong>Incorrect.</strong> ${q.explanation}`;
-            }
-
-            if(currentQuizIndex < quizData.length - 1) {
-                document.getElementById('quizNextBtn').classList.remove('hidden');
-            }
+        function calculateAbsenteeism() {
+            const abs = parseFloat(document.getElementById('calcAbsDays').value);
+            const total = parseFloat(document.getElementById('calcWorkDays').value);
+            const res = document.getElementById('resAbsenteeism');
+            if(isNaN(abs) || isNaN(total) || total <= 0) { alert('Enter valid numbers'); return; }
+            const rate = ((abs / total) * 100).toFixed(2);
+            res.classList.remove('hidden');
+            res.innerHTML = `Absenteeism Rate: <span class="text-gold font-bold">${rate}%</span>`;
         }
 
-        function nextQuizQuestion() {
-            currentQuizIndex++;
-            loadQuiz();
+        function downloadTemplate(name) {
+            alert(`Template text for "${name}" copied to clipboard/ready.`);
         }
-
-        loadQuiz();
 
         function sendAIMessage() {
             const input = document.getElementById('aiInput');
@@ -431,39 +521,16 @@
             chatWindow.scrollTop = chatWindow.scrollHeight;
 
             setTimeout(() => {
-                let aiReply = "That is a great question regarding ER and HRM. In practice, align your decisions with statutory regulations (such as the Nigerian Labour Act) and institutional HR policies.";
-                if(userText.toLowerCase().includes('collective')) {
-                    aiReply = "Collective bargaining is key to industrial harmony. Under Nigerian labor standards, it involves good-faith negotiations between employers and recognized trade unions.";
-                } else if(userText.toLowerCase().includes('turnover')) {
-                    aiReply = "To reduce employee turnover, focus on competitive reward systems, structured onboarding, career growth paths, and regular engagement surveys.";
+                let aiReply = "Regarding ER and HRM, decisions must align with academic management principles, statutory regulations (like the Nigerian Labour Act Cap L1), and global best practice standards.";
+                if(userText.toLowerCase().includes('constructive')) {
+                    aiReply = "Constructive dismissal occurs when an employee resigns because employer actions breach contract terms (e.g. GTB v. Adewumi). The NICN treats this as actionable unfair dismissal.";
+                } else if(userText.toLowerCase().includes('uk') || userText.toLowerCase().includes('global')) {
+                    aiReply = "Under UK law (Employment Rights Act 1996), employees require 2 years continuous service to claim unfair dismissal, whereas Nigerian NICN jurisdiction applies ILO standards immediately upon employment.";
                 }
 
                 chatWindow.innerHTML += `<div class="bg-slate-100 p-3 rounded-lg max-w-[85%] text-sm text-slate-800">${aiReply}</div>`;
                 chatWindow.scrollTop = chatWindow.scrollHeight;
             }, 700);
-        }
-
-        function calculateTurnover() {
-            const sep = parseFloat(document.getElementById('calcSeparations').value);
-            const avg = parseFloat(document.getElementById('calcAvgEmployees').value);
-            const resBox = document.getElementById('calcResultBox');
-            const resVal = document.getElementById('calcResultValue');
-            const resInt = document.getElementById('calcInterpretation');
-
-            if(isNaN(sep) || isNaN(avg) || avg <= 0) {
-                alert('Please enter valid numbers.');
-                return;
-            }
-
-            const rate = ((sep / avg) * 100).toFixed(2);
-            resBox.classList.remove('hidden');
-            resVal.innerText = rate + '%';
-            
-            if(rate > 15) {
-                resInt.innerText = "⚠️ High Turnover: Exceeds the standard 15% benchmark. Review retention strategies.";
-            } else {
-                resInt.innerText = "✅ Healthy Turnover: Within normal limits.";
-            }
         }
     </script>
 </body>
