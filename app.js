@@ -1,12 +1,17 @@
-
 /**
  * ER/HRM Knowledge Hub
- * Dictionary functionality
+ * Main Application Script
+ * Dictionary and Page Navigation
  */
 
+// Initialize the dictionary when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     initDictionary();
 });
+
+/**
+ * DICTIONARY FUNCTIONALITY
+ */
 
 function initDictionary() {
     const dictionaryContainer = document.getElementById('dictionary-list');
@@ -93,4 +98,43 @@ function initDictionary() {
     });
 
     renderTerms();
+}
+
+/**
+ * PAGE NAVIGATION
+ * Switch between Dictionary and Learning Academy.
+ */
+
+function switchView(viewId, event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    const views = document.querySelectorAll('.view-section');
+    const selectedView = document.getElementById(viewId);
+
+    if (!selectedView) {
+        console.error('Requested page section was not found:', viewId);
+        return;
+    }
+
+    views.forEach(view => {
+        view.classList.add('hidden');
+    });
+
+    selectedView.classList.remove('hidden');
+
+    // Update active navigation link
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
