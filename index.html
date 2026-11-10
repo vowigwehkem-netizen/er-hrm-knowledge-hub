@@ -1,69 +1,209 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ER/HRM Knowledge Hub | Learn. Research. Practise. Lead.</title>
-    <script src="dictionary-data.js"></script>
-<script src="app.js"></script>
+
+    <meta name="description" content="A global learning platform for Employment Relations and Human Resource Management students, researchers and professionals.">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <!-- Header Navigation -->
+    <!-- HEADER -->
     <header class="header">
         <div class="nav-container">
+
             <a href="index.html" class="brand-logo">
                 <div class="logo-icon">KH</div>
+
                 <div class="title-group">
                     <h1>ER/HRM Knowledge Hub</h1>
                     <span>Learn. Research. Practise. Lead.</span>
                 </div>
             </a>
-            <nav>
+
+            <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="#dictionary" class="nav-link active">A–Z Dictionary</a></li>
-                    <li><a href="#academy" class="nav-link">Academy</a></li>
-                    <li><a href="#pathways" class="nav-link">Pathways</a></li>
-                    <li><a href="#calculators" class="nav-link">Calculators</a></li>
+                    <li>
+                        <a href="#dictionary"
+                           class="nav-link active"
+                           onclick="switchView('dictionary-view', event)">
+                           A–Z Dictionary
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#academy"
+                           class="nav-link"
+                           onclick="switchView('academy-view', event)">
+                           Learning Academy
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#pathways"
+                           class="nav-link"
+                           onclick="switchView('academy-view', event)">
+                           Pathways
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
         </div>
     </header>
 
-    <!-- Hero Banner -->
+
+    <!-- HERO BANNER -->
     <section class="hero">
         <div class="hero-content">
+
             <h2>Global Knowledge Platform for ER & HRM</h2>
-            <p>Empowering students, researchers, practitioners, and leaders across the globe with institutional-grade HR insights.</p>
+
+            <p>
+                Empowering students, researchers, practitioners,
+                employees and organisational leaders across the
+                globe with knowledge and practical HR insights.
+            </p>
+
         </div>
     </section>
 
-    <!-- Main Content Area -->
+
+    <!-- MAIN CONTENT -->
     <main class="main-container">
-        <!-- Dictionary Section -->
-        <section id="dictionary" class="section-block">
-            <div class="section-header">
-                <h3>ER/HRM A–Z Dictionary</h3>
-            </div>
-            
-            <div class="dictionary-controls">
-                <input type="text" id="search-term" class="search-bar" placeholder="Search terms, definitions, or categories...">
-                <div id="alphabet-filter" class="alphabet-filter"></div>
+
+
+        <!-- DICTIONARY VIEW -->
+        <section id="dictionary-view" class="view-section">
+
+            <div class="section-block">
+
+                <div class="section-header">
+                    <h3>ER/HRM A–Z Dictionary</h3>
+
+                    <p class="section-subtitle">
+                        Explore important Employment Relations and
+                        Human Resource Management concepts.
+                    </p>
+                </div>
+
+                <div class="dictionary-controls">
+
+                    <input
+                        type="text"
+                        id="search-term"
+                        class="search-bar"
+                        placeholder="Search terms, definitions, or categories..."
+                    >
+
+                    <div
+                        id="alphabet-filter"
+                        class="alphabet-filter">
+                    </div>
+
+                </div>
+
+                <div id="dictionary-list">
+                    <!-- Dictionary terms load here -->
+                </div>
+
             </div>
 
-            <div id="dictionary-list">
-                <!-- JavaScript renders items here -->
-            </div>
         </section>
+
+
+        <!-- LEARNING ACADEMY VIEW -->
+        <section id="academy-view" class="view-section hidden">
+
+            <div class="section-block">
+
+                <div class="section-header">
+
+                    <h3>ER/HRM Learning Academy</h3>
+
+                    <p class="section-subtitle">
+                        Learn Employment Relations and Human Resource
+                        Management through structured academic and
+                        practical courses.
+                    </p>
+
+                </div>
+
+
+                <!-- LEARNING PATHWAYS -->
+                <div id="pathways">
+
+                    <h4>Choose Your Learning Pathway</h4>
+
+                    <div id="pathway-tabs"
+                         class="pathway-tabs">
+                    </div>
+
+                </div>
+
+
+                <!-- PATHWAY INFORMATION -->
+                <div id="pathway-info"
+                     class="pathway-info-box">
+                </div>
+
+
+                <!-- COURSE CATALOG -->
+                <div id="course-catalog"
+                     class="course-grid">
+                </div>
+
+
+                <!-- COURSE DETAILS -->
+                <div id="course-detail-view" class="hidden">
+
+                    <button
+                        type="button"
+                        class="btn-secondary"
+                        onclick="backToCatalog()">
+                        ← Back to Courses
+                    </button>
+
+                    <div id="course-content-area">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <!-- Footer -->
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2026 ER/HRM Knowledge Hub. All rights reserved.</p>
+
+        <p>
+            &copy; 2026 ER/HRM Knowledge Hub.
+            All rights reserved.
+        </p>
+
+        <p>
+            Learn. Research. Practise. Lead.
+        </p>
+
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/dictionary-data.js"></script>
-    <script src="assets/js/app.js"></script>
+
+    <!-- JAVASCRIPT FILES -->
+    <!-- Keep this order -->
+
+    <script src="dictionary-data.js"></script>
+    <script src="academy-data.js"></script>
+    <script src="app.js"></script>
+    <script src="academy.js"></script>
+
 </body>
 </html>
