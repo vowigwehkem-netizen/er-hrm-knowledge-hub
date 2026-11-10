@@ -1,0 +1,191 @@
+
+/**
+ * ER/HRM Knowledge Hub - Learning Academy Dataset
+ */
+
+const learningPathways = [
+    {
+        id: "undergraduate",
+        name: "1. Undergraduate Academy",
+        description: "Foundational knowledge in Human Resource Management and Employee Relations for bachelor's degree students and beginners.",
+        courses: [
+            {
+                id: "ug-101",
+                category: "HR Fundamentals",
+                title: "Introduction to Human Resource Management",
+                description: "Master the core functions of HRM including recruitment, selection, training, and performance management.",
+                objectives: [
+                    "Understand the evolution of personnel management to strategic HRM.",
+                    "Identify key statutory HR responsibilities.",
+                    "Analyze recruitment funnel metrics."
+                ],
+                lessons: [
+                    {
+                        title: "Lesson 1: Evolution of HRM",
+                        content: "Human Resource Management has evolved from reactive personnel administration (welfare and payroll) to strategic workforce partnership. Modern HRM focuses on human capital optimization, organizational culture, and business agility.",
+                        practicalExample: "A retail firm shifting from manual hiring checklists to competency-based interviews to reduce early turnover.",
+                        activity: "Compare personnel administration tasks with strategic HRM tasks in a two-column table."
+                    },
+                    {
+                        title: "Lesson 2: Recruitment & Selection Basics",
+                        content: "Effective recruitment balances talent acquisition cost, time-to-hire, and quality-of-hire. Structured interviews and psychometric assessments minimize unconscious bias.",
+                        practicalExample: "Implementing blind resume screening to eliminate demographic bias in tech hiring.",
+                        activity: "Draft a job description highlighting essential vs. desirable criteria."
+                    }
+                ],
+                quiz: {
+                    question: "What is the primary shift from traditional personnel management to strategic HRM?",
+                    options: [
+                        "Focusing strictly on payroll administration and office supplies",
+                        "Aligning workforce capabilities directly with organizational strategic goals",
+                        "Outsourcing all employee relations to external labor lawyers",
+                        "Eliminating performance appraisals entirely"
+                    ],
+                    correctIndex: 1,
+                    explanation: "Strategic HRM aligns people practices with overall business strategy to gain sustainable competitive advantage."
+                }
+            },
+            {
+                id: "ug-102",
+                category: "Employee Relations",
+                title: "Foundations of Employee Relations",
+                description: "Explore the employment relationship, psychological contracts, and basic workplace dispute resolution.",
+                objectives: [
+                    "Define the legal and psychological employment contract.",
+                    "Understand grievance handling procedures.",
+                    "Recognize the role of workplace communication."
+                ],
+                lessons: [
+                    {
+                        title: "Lesson 1: The Psychological Contract",
+                        content: "Beyond the written employment contract, the psychological contract represents unwritten mutual expectations and obligations between employer and employee, encompassing trust, fairness, and support.",
+                        practicalExample: "An employee expecting career mentorship in exchange for discretionary overtime effort.",
+                        activity: "List three explicit contract terms and three psychological expectations."
+                    }
+                ],
+                quiz: {
+                    question: "What does the 'psychological contract' refer to in employee relations?",
+                    options: [
+                        "A psychiatric evaluation required prior to hiring",
+                        "Unwritten mutual expectations and obligations between employer and employee",
+                        "The legally binding salary agreement filed with tax authorities",
+                        "A mandatory union arbitration clause"
+                    ],
+                    correctIndex: 1,
+                    explanation: "The psychological contract refers to unwritten expectations regarding trust, commitment, and mutual support."
+                }
+            }
+        ]
+    },
+    {
+        id: "professional",
+        name: "2. Professional & Workplace Academy",
+        description: "Applied skills, employment compliance, collective bargaining, and advanced workplace practice for HR practitioners and managers.",
+        courses: [
+            {
+                id: "pro-201",
+                category: "Employee Relations",
+                title: "Advanced Collective Bargaining & Negotiation",
+                description: "Master negotiation strategies, union relations, grievance arbitration, and labor dispute resolution.",
+                objectives: [
+                    "Prepare collective bargaining mandates.",
+                    "Navigate interest-based vs. positional bargaining.",
+                    "Manage lawful strikes and lockouts."
+                ],
+                lessons: [
+                    {
+                        title: "Lesson 1: Interest-Based Bargaining (IBB)",
+                        content: "Interest-Based Bargaining focuses on mutual gains rather than entrenched positions. Parties explore underlying needs and co-create sustainable labor agreements.",
+                        practicalExample: "A manufacturing plant negotiating flexible shift schedules in lieu of flat wage hikes during economic downturns.",
+                        activity: "Identify three mutual interests shared by labor unions and corporate management."
+                    }
+                ],
+                quiz: {
+                    question: "What is the main characteristic of Interest-Based Bargaining (IBB)?",
+                    options: [
+                        "Maximalist opening demands with zero compromise",
+                        "Focusing on shared underlying needs and win-win solutions",
+                        "Immediate recourse to government strike injunctions",
+                        "Excluding union representatives from financial discussions"
+                    ],
+                    correctIndex: 1,
+                    explanation: "IBB emphasizes collaboration and identifying mutual interests to resolve labor disputes constructively."
+                }
+            }
+        ]
+    },
+    {
+        id: "masters",
+        name: "3. Master's Academy",
+        description: "Strategic workforce planning, international HRM, global talent management, and advanced organizational behavior for postgraduate students and HR leaders.",
+        courses: [
+            {
+                id: "mst-301",
+                category: "Strategic HRM",
+                title: "Global Talent Management & Cross-Cultural Leadership",
+                description: "Examine expatriate management, global mobility frameworks, and international labor standards.",
+                objectives: [
+                    "Design global expatriate compensation packages.",
+                    "Mitigate cultural dissonance in multinational mergers.",
+                    "Apply Hofstede's cultural dimensions to HR policy."
+                ],
+                lessons: [
+                    {
+                        title: "Lesson 1: Expatriate Failure & Adjustment",
+                        content: "Expatriate failure—early return or poor performance abroad—often stems from family adjustment issues and cultural misalignment rather than technical incompetence.",
+                        practicalExample: "Providing pre-departure cross-cultural training and spouse support programs for international assignments.",
+                        activity: "Analyze how Power Distance affects employee feedback mechanisms across subsidiaries."
+                    }
+                ],
+                quiz: {
+                    question: "What is the primary cause of expatriate assignment failure in multinational corporations?",
+                    options: [
+                        "Lack of technical engineering skills",
+                        "Inadequate cross-cultural adjustment and family relocation friction",
+                        "Excessive corporate travel budgets",
+                        "Strict adherence to local tax laws"
+                    ],
+                    correctIndex: 1,
+                    explanation: "Family adjustment and cross-cultural challenges are consistently cited as the leading drivers of failed international assignments."
+                }
+            }
+        ]
+    },
+    {
+        id: "phd",
+        name: "4. PhD and Research Academy",
+        description: "Rigorous academic research methodologies, publication strategies, epistemological frameworks, and industrial sociology for doctoral researchers.",
+        courses: [
+            {
+                id: "phd-401",
+                category: "Research Methodology",
+                title: "Advanced Research Design & Epistemology in HRM",
+                description: "Explore positivist, interpretive, and critical realist paradigms in employment relations research.",
+                objectives: [
+                    "Formulate robust conceptual frameworks.",
+                    "Evaluate structural equation modeling (SEM) vs. qualitative comparative analysis (QCA).",
+                    "Navigate top-tier peer-reviewed publication processes."
+                ],
+                lessons: [
+                    {
+                        title: "Lesson 1: Epistemological Stances in ER/HRM",
+                        content: "Research design in employment relations requires choosing between positivist measurement of workplace phenomena and critical realist investigations of underlying power structures.",
+                        practicalExample: "Investigating the paradox of precarious work using critical realist qualitative interviews.",
+                        activity: "Draft a research question suitable for a peer-reviewed journal submission."
+                    }
+                ],
+                quiz: {
+                    question: "What distinguishes Critical Realism in employment relations research?",
+                    options: [
+                        "Assuming all workplace conflict can be eliminated with software",
+                        "Focusing on observable statistical variance while ignoring unobservable power structures",
+                        "Examining both observable events and unobservable structural mechanisms of power",
+                        "Rejecting all quantitative survey methodologies"
+                    ],
+                    correctIndex: 2,
+                    explanation: "Critical realism examines both empirical events and deep structural mechanisms that generate workplace dynamics."
+                }
+            }
+        ]
+    }
+];
