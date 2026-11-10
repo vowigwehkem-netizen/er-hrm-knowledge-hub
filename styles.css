@@ -1,0 +1,276 @@
+/* ==========================================================================
+   ER/HRM Knowledge Hub - Design System & Core Styles Palette: Navy Blue, White, & Gold
+   ========================================================================== */
+
+:root {
+    /* Brand Colors */
+    --primary-navy: #0A192F;
+    --navy-light: #172A45;
+    --navy-dark: #020C1B;
+    --gold-accent: #D4AF37;
+    --gold-light: #F4E8C1;
+    --gold-dark: #AA820A;
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --text-light: #F8FAFC;
+    --bg-light: #F8FAFC;
+    --bg-white: #FFFFFF;
+    --border-color: #E2E8F0;
+    
+    /* Functional Colors */
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Elevation & Radius */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+.header {
+    background-color: var(--primary-navy);
+    color: var(--text-light);
+    border-bottom: 3px solid var(--gold-accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.brand-logo .logo-icon {
+    background-color: var(--gold-accent);
+    color: var(--primary-navy);
+    font-weight: 800;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-size: 1.2rem;
+}
+
+.brand-logo .title-group h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.brand-logo .title-group span {
+    font-size: 0.75rem;
+    color: var(--gold-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    padding: 0.5rem 0;
+
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold-accent);
+    border-bottom: 2px solid var(--gold-accent);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--navy-light) 100%);
+    color: var(--text-light);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #CBD5E1;
+    margin-bottom: 2rem;
+}
+
+/* Layout Containers */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.section-block {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h3 {
+    color: var(--primary-navy);
+    font-size: 1.5rem;
+}
+
+/* Dictionary Controls & List */
+.dictionary-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.search-bar:focus {
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.alphabet-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.letter-btn {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.letter-btn:hover, .letter-btn.active {
+    background: var(--primary-navy);
+    color: var(--gold-accent);
+    border-color: var(--primary-navy);
+}
+
+.term-card {
+    background: var(--bg-white);
+    border-left: 4px solid var(--gold-accent);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.term-card h4 {
+    color: var(--primary-navy);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.term-card .category-badge {
+    display: inline-block;
+    background-color: var(--gold-light);
+    color: var(--gold-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.term-card p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-navy);
+    color: var(--text-light);
+    border-top: 3px solid var(--gold-accent);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+/* Utilities */
+.hidden { display: none !important; }
+  
