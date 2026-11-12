@@ -363,3 +363,60 @@
         padding: 6px;
     }
   }
+
+/* =========================================================
+   VERSION 2.1.0 - ADDITIONAL COMPONENT SUPPORT
+   ========================================================= */
+
+/* Reset and empty-state buttons */
+
+.dictionary-reset-button {
+    margin-top: 18px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--primary-navy);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dictionary-reset-button:hover {
+    background: var(--primary-gold);
+    color: var(--primary-navy);
+}
+
+/* Related-term links */
+
+.related-term-link {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #EDF2F8;
+    color: var(--primary-navy);
+    border: 1px solid transparent;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.related-term-link:hover {
+    background: var(--primary-navy);
+    color: var(--white);
+}
+
+.related-term-link:focus-visible,
+.dictionary-reset-button:focus-visible {
+    outline: 3px solid var(--primary-gold);
+    outline-offset: 3px;
+}
+
+/* Ensure hidden details remain hidden */
+
+.dictionary-details[hidden] {
+    display: none !important;
+}
+
