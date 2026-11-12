@@ -1,0 +1,139 @@
+/* =====================================================
+   ER/HRM KNOWLEDGE HUB
+   ADVANCED DESIGN SYSTEM
+   Brand: Navy Blue, White and Gold
+   ===================================================== */
+
+:root {
+    --advanced-navy: #0A192F;
+    --advanced-navy-light: #172A45;
+    --advanced-gold: #D4AF37;
+    --advanced-gold-light: #F4E8C9;
+    --advanced-white: #FFFFFF;
+    --advanced-background: #F5F7FA;
+    --advanced-text: #263449;
+    --advanced-muted: #718096;
+    --advanced-border: #E2E8F0;
+    --advanced-success: #16865C;
+    --advanced-danger: #C53030;
+
+    --advanced-radius: 12px;
+    --advanced-shadow: 0 4px 16px rgba(10, 25, 47, 0.08);
+}
+
+/* General layout */
+
+.advanced-section {
+    width: 100%;
+    padding: 24px;
+    background: var(--advanced-background);
+    border-radius: var(--advanced-radius);
+}
+
+.advanced-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advanced-heading {
+    color: var(--advanced-navy);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.advanced-description {
+    color: var(--advanced-muted);
+    line-height: 1.7;
+}
+
+/* Advanced cards */
+
+.advanced-card {
+    background: var(--advanced-white);
+    border: 1px solid var(--advanced-border);
+    border-radius: var(--advanced-radius);
+    padding: 22px;
+    box-shadow: var(--advanced-shadow);
+    transition: transform 0.2s ease;
+}
+
+.advanced-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Advanced buttons */
+
+.advanced-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--advanced-navy);
+    color: var(--advanced-white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.advanced-btn-gold {
+    background: var(--advanced-gold);
+    color: var(--advanced-navy);
+}
+
+/* Responsive grid */
+
+.advanced-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+    );
+    gap: 20px;
+}
+
+/* Form controls */
+
+.advanced-input,
+.advanced-select,
+.advanced-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--advanced-border);
+    border-radius: 8px;
+    background: var(--advanced-white);
+    color: var(--advanced-text);
+    font: inherit;
+}
+
+.advanced-input:focus,
+.advanced-select:focus,
+.advanced-textarea:focus {
+    outline: 2px solid var(--advanced-gold);
+    border-color: var(--advanced-gold);
+}
+
+/* Status indicators */
+
+.advanced-status-success {
+    color: var(--advanced-success);
+}
+
+.advanced-status-danger {
+    color: var(--advanced-danger);
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+    .advanced-section {
+        padding: 16px;
+    }
+
+    .advanced-card {
+        padding: 16px;
+    }
+
+    .advanced-grid {
+        grid-template-columns: 1fr;
+    }
+}
