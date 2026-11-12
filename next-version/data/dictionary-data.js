@@ -198,7 +198,10 @@ function getDictionaryTermsByLetter(letter) {
 function getDictionaryTermsByCategory(category) {
 
     return dictionaryData.filter(item =>
-        item.category.toLowerCase() === category.toLowerCase()
-    );
+        item.category.toLowerCase().includes(searchTerm) ||
+item.practicalExample.toLowerCase().includes(searchTerm) ||
+item.relatedTerms.some(term =>
+    term.toLowerCase().includes(searchTerm)
+)
 
       }
