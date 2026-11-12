@@ -1,238 +1,365 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="ER/HRM Knowledge Hub is a global learning and professional development platform for Employment Relations and Human Resource Management.">
+    <meta name="description" content="ER/HRM Knowledge Hub is a global learning, research and professional development platform for Employment Relations and Human Resource Management.">
 
-    <meta name="theme-color" content="#0A192F">
+    <meta name="theme-color" content="#0b1f3a">
 
     <title>ER/HRM Knowledge Hub | Learn. Research. Practise. Lead.</title>
 
     <link rel="stylesheet" href="assets/css/main.css">
-
-    <script src="assets/js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/css/dictionary.css">
 </head>
 
 <body>
 
-    <!-- Application Header -->
-    <header class="app-header">
-        <div class="brand">
-            <h1>ER/HRM <span>Knowledge Hub</span></h1>
-            <p>Learn. Research. Practise. Lead.</p>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container header-container">
+
+            <a href="#home" class="brand">
+                ER/HRM <span>Knowledge Hub</span>
+            </a>
+
+            <button class="mobile-menu-toggle"
+                    id="mobile-menu-toggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="main-navigation" id="main-navigation">
+                <a href="#home">Home</a>
+                <a href="#learning">Learning Academy</a>
+                <a href="#global-dictionary">Dictionary</a>
+                <a href="#research">Research</a>
+                <a href="#tools">HR Tools</a>
+                <a href="#about">About</a>
+            </nav>
+
         </div>
-
-        <button class="menu-toggle" id="menu-toggle"
-            aria-label="Toggle navigation"
-            aria-expanded="false">
-            ☰
-        </button>
-
-        <nav class="main-navigation" id="main-navigation">
-            <a href="#home">Home</a>
-            <a href="#learning">Learning Academy</a>
-            <a href="#dictionary">Dictionary</a>
-            <a href="#research">Research</a>
-            <a href="#tools">HR Tools</a>
-            <a href="#about">About</a>
-        </nav>
     </header>
 
-    <!-- Main Application -->
     <main>
 
-        <!-- Hero Section -->
+        <!-- HERO SECTION -->
         <section class="hero-section" id="home">
-            <div class="hero-content">
-                <p class="eyebrow">A Global ER & HRM Knowledge Platform</p>
+            <div class="container">
 
-                <h2>
-                    Empowering the Future of
-                    <span>Work and People Management</span>
-                </h2>
+                <p class="hero-label">
+                    GLOBAL ER & HRM KNOWLEDGE PLATFORM
+                </p>
+
+                <h1>
+                    Learn. Research. Practise. Lead.
+                </h1>
 
                 <p>
-                    Explore Employment Relations and Human Resource
-                    Management through academic learning, practical
-                    knowledge, research and professional development.
+                    Your integrated destination for Employment Relations
+                    and Human Resource Management education, research,
+                    professional development and practical workplace solutions.
                 </p>
 
                 <div class="hero-actions">
                     <a href="#learning" class="btn btn-primary">
-                        Start Learning
+                        Explore Learning
                     </a>
 
-                    <a href="#tools" class="btn btn-secondary">
-                        Explore HR Tools
+                    <a href="#global-dictionary" class="btn btn-secondary">
+                        Explore Dictionary
                     </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="intro-section">
+            <div class="container">
+
+                <h2>Welcome to ER/HRM Knowledge Hub</h2>
+
+                <p>
+                    ER/HRM Knowledge Hub is designed to connect academic
+                    knowledge with real-world Human Resource Management
+                    and Employment Relations practice.
+                </p>
+
+                <p>
+                    Whether you are an undergraduate student, postgraduate
+                    researcher, lecturer, HR professional, employer or
+                    employee, this platform provides resources to support
+                    your learning and professional growth.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- MAIN MODULES -->
+        <section class="modules-section" id="learning">
+            <div class="container">
+
+                <h2>Explore Our Learning Environment</h2>
+
+                <p>
+                    Discover the different areas of the ER/HRM Knowledge Hub.
+                </p>
+
+                <div class="module-grid">
+
+                    <article class="module-card">
+                        <h3>Learning Academy</h3>
+                        <p>
+                            Structured learning pathways for students,
+                            researchers and professionals.
+                        </p>
+                        <a href="#learning-pathways">Explore Academy</a>
+                    </article>
+
+                    <article class="module-card">
+                        <h3>Global ER/HRM Dictionary</h3>
+                        <p>
+                            Explore Employment Relations and Human
+                            Resource Management concepts and definitions.
+                        </p>
+                        <a href="#global-dictionary">Open Dictionary</a>
+                    </article>
+
+                    <article class="module-card" id="research">
+                        <h3>Research Centre</h3>
+                        <p>
+                            Discover research guidance, project ideas,
+                            academic resources and research methods.
+                        </p>
+                        <span>Coming in a future development stage</span>
+                    </article>
+
+                    <article class="module-card" id="tools">
+                        <h3>Professional HR Tools</h3>
+                        <p>
+                            Access practical HR resources, workplace
+                            templates and management tools.
+                        </p>
+                        <span>Coming in a future development stage</span>
+                    </article>
+
+                    <article class="module-card">
+                        <h3>Global Employment Law</h3>
+                        <p>
+                            Explore employment legislation and workplace
+                            regulations across different jurisdictions.
+                        </p>
+                        <span>Coming in a future development stage</span>
+                    </article>
+
+                    <article class="module-card">
+                        <h3>Career Development</h3>
+                        <p>
+                            Develop professional skills and explore
+                            career opportunities in HR and ER.
+                        </p>
+                        <span>Coming in a future development stage</span>
+                    </article>
+
+                    <article class="module-card">
+                        <h3>AI HR Mentor</h3>
+                        <p>
+                            An intelligent learning assistant for
+                            academic and professional guidance.
+                        </p>
+                        <span>Coming in a future development stage</span>
+                    </article>
+
+                    <article class="module-card">
+                        <h3>Community</h3>
+                        <p>
+                            Connect with learners, lecturers,
+                            researchers and HR professionals.
+                        </p>
+                        <span>Coming in a future development stage</span>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <!-- Platform Introduction -->
-        <section class="introduction-section">
-            <div class="section-heading">
-                <p class="eyebrow">Discover the Platform</p>
-                <h2>Everything ER & HRM in One Place</h2>
+        <!-- GLOBAL DICTIONARY -->
+        <section class="dictionary-section" id="global-dictionary">
+
+            <div class="container">
+
+                <div class="dictionary-header">
+                    <p class="dictionary-label">
+                        KNOWLEDGE AT YOUR FINGERTIPS
+                    </p>
+
+                    <h2>Global ER/HRM Dictionary</h2>
+
+                    <p>
+                        Search and explore important concepts,
+                        terminology and practical explanations
+                        in Employment Relations and Human Resource Management.
+                    </p>
+                </div>
+
+                <div class="dictionary-search-area">
+
+                    <label for="dictionary-search">
+                        Search for a term
+                    </label>
+
+                    <input
+                        type="search"
+                        id="dictionary-search"
+                        placeholder="Search terms, concepts or keywords..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+                <div class="dictionary-filter-area">
+
+                    <h3>Browse Alphabetically</h3>
+
+                    <div id="dictionary-alphabet"
+                         aria-label="Filter dictionary by letter">
+                    </div>
+
+                    <label for="dictionary-category">
+                        Filter by category
+                    </label>
+
+                    <select id="dictionary-category">
+                        <option value="ALL">All Categories</option>
+                    </select>
+
+                </div>
+
+                <div class="dictionary-results-heading">
+                    <h3>Dictionary Results</h3>
+
+                    <p id="dictionary-count"
+                       aria-live="polite">
+                        Loading dictionary...
+                    </p>
+                </div>
+
+                <div id="dictionary-results"
+                     aria-live="polite">
+                </div>
+
+                <div id="dictionary-details"
+                     aria-live="polite"
+                     hidden>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- LEARNING PATHWAYS -->
+        <section class="pathways-section" id="learning-pathways">
+
+            <div class="container">
+
+                <h2>Learning Pathways</h2>
+
                 <p>
-                    A connected knowledge environment designed for
-                    students, researchers, lecturers and HR professionals
-                    around the world.
+                    Our learning environment is designed for different
+                    levels of academic and professional development.
                 </p>
+
+                <div class="pathway-grid">
+
+                    <article class="pathway-card">
+                        <h3>Undergraduate Academy</h3>
+                        <p>
+                            Build a strong foundation in ER and HRM.
+                        </p>
+                    </article>
+
+                    <article class="pathway-card">
+                        <h3>Professional & Workplace Academy</h3>
+                        <p>
+                            Develop practical workplace and HR skills.
+                        </p>
+                    </article>
+
+                    <article class="pathway-card">
+                        <h3>Master's Academy</h3>
+                        <p>
+                            Advance your academic and professional knowledge.
+                        </p>
+                    </article>
+
+                    <article class="pathway-card">
+                        <h3>PhD & Research Academy</h3>
+                        <p>
+                            Strengthen advanced research and scholarly skills.
+                        </p>
+                    </article>
+
+                </div>
+
             </div>
+
         </section>
 
-        <!-- Main Modules -->
-        <section class="modules-section" id="learning">
-            <div class="section-heading">
-                <p class="eyebrow">Explore Our Modules</p>
-                <h2>Knowledge, Learning and Professional Growth</h2>
-            </div>
-
-            <div class="module-grid">
-
-                <article class="module-card">
-                    <span class="module-icon">🎓</span>
-                    <h3>Learning Academy</h3>
-                    <p>
-                        Structured learning pathways for undergraduate,
-                        professional, master's and PhD learners.
-                    </p>
-                    <a href="#learning">Explore Academy</a>
-                </article>
-
-                <article class="module-card" id="dictionary">
-                    <span class="module-icon">📚</span>
-                    <h3>ER/HRM Dictionary</h3>
-                    <p>
-                        Understand employment relations and human
-                        resource management concepts and terminology.
-                    </p>
-                    <a href="#dictionary">Explore Dictionary</a>
-                </article>
-
-                <article class="module-card" id="research">
-                    <span class="module-icon">🔬</span>
-                    <h3>Research Centre</h3>
-                    <p>
-                        Access research guidance, project resources,
-                        academic writing support and research methods.
-                    </p>
-                    <a href="#research">Explore Research</a>
-                </article>
-
-                <article class="module-card">
-                    <span class="module-icon">⚖️</span>
-                    <h3>Global Employment Law</h3>
-                    <p>
-                        Explore employment legislation, labour standards
-                        and workplace regulations across countries.
-                    </p>
-                    <a href="#about">Explore Law Centre</a>
-                </article>
-
-                <article class="module-card" id="tools">
-                    <span class="module-icon">🧰</span>
-                    <h3>Professional HR Tools</h3>
-                    <p>
-                        Discover HR templates, workplace resources,
-                        calculators and practical management tools.
-                    </p>
-                    <a href="#tools">Explore HR Tools</a>
-                </article>
-
-                <article class="module-card">
-                    <span class="module-icon">🤖</span>
-                    <h3>AI HR Mentor</h3>
-                    <p>
-                        A planned intelligent learning assistant for
-                        HR questions, explanations and guided learning.
-                    </p>
-                    <a href="#about">Discover AI Mentor</a>
-                </article>
-
-                <article class="module-card">
-                    <span class="module-icon">💼</span>
-                    <h3>Career Centre</h3>
-                    <p>
-                        Build professional skills, explore career
-                        opportunities and prepare for the workplace.
-                    </p>
-                    <a href="#about">Explore Careers</a>
-                </article>
-
-                <article class="module-card">
-                    <span class="module-icon">🌍</span>
-                    <h3>Global HR Community</h3>
-                    <p>
-                        Connect with learners, researchers and
-                        professionals across the world.
-                    </p>
-                    <a href="#about">Explore Community</a>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Learning Levels -->
-        <section class="learning-levels">
-            <div class="section-heading">
-                <p class="eyebrow">Learn at Your Level</p>
-                <h2>Four Learning Pathways</h2>
-            </div>
-
-            <div class="level-grid">
-                <article class="level-card">
-                    <h3>Undergraduate</h3>
-                    <p>Build strong foundations in ER and HRM.</p>
-                </article>
-
-                <article class="level-card">
-                    <h3>Professional</h3>
-                    <p>Develop practical workplace and HR skills.</p>
-                </article>
-
-                <article class="level-card">
-                    <h3>Master's</h3>
-                    <p>Explore advanced theories and applications.</p>
-                </article>
-
-                <article class="level-card">
-                    <h3>PhD & Research</h3>
-                    <p>Advance research, scholarship and knowledge.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- About -->
+        <!-- ABOUT -->
         <section class="about-section" id="about">
-            <div class="section-heading">
-                <p class="eyebrow">Our Mission</p>
-                <h2>Making ER & HRM Knowledge Accessible Globally</h2>
+
+            <div class="container">
+
+                <h2>About ER/HRM Knowledge Hub</h2>
+
                 <p>
-                    Our goal is to bridge the gap between academic
-                    knowledge and workplace practice by bringing
-                    learning, research and professional resources
-                    together in one platform.
+                    Our mission is to make Employment Relations and
+                    Human Resource Management knowledge accessible,
+                    practical and relevant to a global audience.
                 </p>
+
+                <p>
+                    We aim to bridge the gap between academic theory
+                    and workplace practice through learning, research,
+                    innovation and professional development.
+                </p>
+
             </div>
+
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="app-footer">
-        <h2>ER/HRM Knowledge Hub</h2>
-        <p>Learn. Research. Practise. Lead.</p>
-        <p>
-            &copy; <span id="current-year">2026</span>
-            ER/HRM Knowledge Hub. All rights reserved.
-        </p>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="container">
+
+            <h3>ER/HRM Knowledge Hub</h3>
+
+            <p>Learn. Research. Practise. Lead.</p>
+
+            <p>
+                Empowering learners and professionals through
+                global ER and HRM knowledge.
+            </p>
+
+            <p>
+                &copy; <span id="current-year"></span>
+                ER/HRM Knowledge Hub. All rights reserved.
+            </p>
+
+        </div>
+
     </footer>
 
+    <!-- APPLICATION SCRIPTS -->
+    <script src="assets/js/app.js" defer></script>
+    <script src="data/dictionary-data.js" defer></script>
+    <script src="modules/dictionary.js" defer></script>
+
 </body>
-  </html>
-  
+</html>
