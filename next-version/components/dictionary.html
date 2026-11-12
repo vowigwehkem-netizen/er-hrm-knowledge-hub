@@ -1,0 +1,105 @@
+
+<!-- =====================================================
+     ER/HRM KNOWLEDGE HUB
+     GLOBAL DICTIONARY COMPONENT
+     ===================================================== -->
+
+<section class="dictionary-module" id="global-dictionary">
+
+    <!-- Dictionary Introduction -->
+    <div class="dictionary-header">
+
+        <p class="eyebrow">Knowledge and Terminology Centre</p>
+
+        <h2>Global ER/HRM Dictionary</h2>
+
+        <p>
+            Explore essential Employment Relations and Human
+            Resource Management concepts, definitions and
+            practical workplace explanations.
+        </p>
+
+    </div>
+
+
+    <!-- Dictionary Search -->
+    <div class="dictionary-search-area">
+
+        <label for="dictionary-search">
+            Search ER/HRM terminology
+        </label>
+
+        <input
+            type="search"
+            id="dictionary-search"
+            placeholder="Search a term, definition or concept..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- Dictionary Filters -->
+    <div class="dictionary-filter-area">
+
+        <div class="alphabet-filter">
+
+            <h3>Browse Alphabetically</h3>
+
+            <div
+                id="dictionary-alphabet"
+                class="dictionary-alphabet"
+                aria-label="Filter dictionary by letter">
+            </div>
+
+        </div>
+
+
+        <div class="category-filter">
+
+            <label for="dictionary-category">
+                Filter by Category
+            </label>
+
+            <select id="dictionary-category">
+                <option value="ALL">All Categories</option>
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- Search Results Information -->
+    <div class="dictionary-results-header">
+
+        <h3>Dictionary Terms</h3>
+
+        <p
+            id="dictionary-count"
+            aria-live="polite">
+            Loading dictionary...
+        </p>
+
+    </div>
+
+
+    <!-- Dictionary Results -->
+    <div
+        id="dictionary-results"
+        class="dictionary-results"
+        aria-live="polite">
+
+        <p>Loading dictionary terms...</p>
+
+    </div>
+
+
+    <!-- Selected Term Details -->
+    <div
+        id="dictionary-details"
+        class="dictionary-details"
+        hidden>
+    </div>
+
+</section>
