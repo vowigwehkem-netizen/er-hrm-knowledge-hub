@@ -1,0 +1,19 @@
+
+{
+  "name": "er-hrm-knowledge-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A global learning and professional development platform for Employment Relations and Human Resource Management.",
+  "homepage": "https://vowigwehkem-netizen.github.io/er-hrm-knowledge-hub/",
+  "scripts": {
+    "check": "node --check app.js && node --check academy.js && node --check dictionary-data.js && node --check academy-data.js"
+  },
+  "keywords": [
+    "employment-relations",
+    "human-resource-management",
+    "learning-platform",
+    "HRM",
+    "ER"
+  ],
+  "license": "UNLICENSED"
+}
