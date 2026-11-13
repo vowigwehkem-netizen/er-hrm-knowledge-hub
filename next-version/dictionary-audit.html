@@ -1,138 +1,261 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ER/HRM Dictionary Audit</title>
-
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/dictionary.css">
+    <title>ER/HRM Dictionary Dataset Audit</title>
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Navy blue */
+            --accent: #d97706; /* Gold/Amber */
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --success: #16a34a;
+            --fail: #dc2626;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        h1 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0.5rem 0 0 0;
+        }
+        .card li {
+            padding: 0.35rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .card li:last-child {
+            border-bottom: none;
+        }
+        .pass { color: var(--success); font-weight: bold; }
+        .fail { color: var(--fail); font-weight: bold; }
+        .error-details {
+            margin-top: 1.5rem;
+        }
+        .error-item {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
-
-    <main class="container">
-        <h1>ER/HRM Dictionary Audit</h1>
-        <p>Temporary testing page for the advanced dictionary.</p>
-
-        <section id="global-dictionary">
-            <h2>Global ER/HRM Dictionary</h2>
-
-            <input
-                type="search"
-                id="dictionary-search"
-                placeholder="Search dictionary terms..."
-            >
-
-            <div id="dictionary-alphabet"></div>
-
-            <select id="dictionary-category">
-                <option value="all">All Categories</option>
-            </select>
-
-            <p id="dictionary-count"></p>
-
-            <div id="dictionary-results"></div>
-
-            <div id="dictionary-details" hidden></div>
-        </section>
-
-        <section>
-            <h2>Audit Results</h2>
-            <pre id="audit-results">Preparing audit...</pre>
-        </section>
-    </main>
+    <div class="container">
+        <h1>ER/HRM Dictionary Dataset Audit</h1>
+        <p>Executing comprehensive dataset validation on <code>next-version/data/dictionary-data.js</code>...</p>
+        
+        <div id="audit-results">
+            <p>Running audit...</p>
+        </div>
+    </div>
 
     <script src="data/dictionary-data.js"></script>
-    <script src="modules/dictionary.js"></script>
-
     <script>
-        (function () {
-            const output = document.getElementById("audit-results");
+        function escapeHtml(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
 
-            const data = typeof dictionaryData !== "undefined"
-                ? dictionaryData
-                : null;
-
-            if (!Array.isArray(data)) {
-                output.textContent =
-                    "FAIL: Dictionary dataset could not be loaded.";
+        window.addEventListener('DOMContentLoaded', () => {
+            const resultsDiv = document.getElementById('audit-results');
+            
+            if (typeof dictionaryData === 'undefined' || !Array.isArray(dictionaryData)) {
+                resultsDiv.innerHTML = '<p class="fail">Error: dictionaryData could not be loaded or is not a valid array from next-version/data/dictionary-data.js</p>';
                 return;
             }
 
-            const ids = data.map(item => item.id);
-            const terms = data.map(item =>
-                String(item.term || "").trim().toLowerCase()
-            );
+            // 1. Total entries check
+            const totalEntries = dictionaryData.length;
+            const totalPass = totalEntries === 100;
 
-            const duplicateIds = ids.length - new Set(ids).size;
-            const duplicateTerms = terms.length - new Set(terms).size;
+            // 2. Duplicate IDs check
+            const ids = new Set();
+            let duplicateIdsCount = 0;
+            dictionaryData.forEach(entry => {
+                if (!entry || typeof entry !== 'object') return;
+                if (ids.has(entry.id)) {
+                    duplicateIdsCount++;
+                } else if (entry.id !== undefined && entry.id !== null) {
+                    ids.add(entry.id);
+                }
+            });
 
-            const requiredFields = [
-                "id",
-                "term",
-                "letter",
-                "category",
-                "definition",
-                "practicalExample",
-                "relatedTerms",
-                "level"
-            ];
+            // 3. Duplicate terms check (ensuring term is a string before calling .trim())
+            const terms = new Set();
+            let duplicateTermsCount = 0;
+            dictionaryData.forEach(entry => {
+                if (!entry || typeof entry !== 'object') return;
+                const normalizedTerm = (typeof entry.term === 'string') ? entry.term.trim().toLowerCase() : '';
+                if (normalizedTerm && terms.has(normalizedTerm)) {
+                    duplicateTermsCount++;
+                } else if (normalizedTerm) {
+                    terms.add(normalizedTerm);
+                }
+            });
 
-            let missingFields = 0;
-            let letterMismatches = 0;
-            let invalidRelatedTerms = 0;
+            // 4. Missing, empty or invalid required fields check
+            const requiredFields = ['id', 'term', 'letter', 'category', 'definition', 'practicalExample', 'relatedTerms', 'level'];
+            let missingFieldsErrors = [];
 
-            data.forEach(item => {
-                requiredFields.forEach(field => {
-                    if (
-                        !item ||
-                        item[field] === undefined ||
-                        item[field] === null ||
-                        (typeof item[field] === "string" &&
-                         item[field].trim() === "")
-                    ) {
-                        missingFields++;
-                    }
-                });
-
-                if (
-                    item &&
-                    typeof item.term === "string" &&
-                    typeof item.letter === "string" &&
-                    item.term.trim().charAt(0).toUpperCase() !==
-                    item.letter.trim().toUpperCase()
-                ) {
-                    letterMismatches++;
+            dictionaryData.forEach((entry, index) => {
+                if (!entry || typeof entry !== 'object') {
+                    missingFieldsErrors.push({
+                        index: index,
+                        term: '(Invalid Entry)',
+                        field: 'structure',
+                        value: 'null or non-object entry'
+                    });
+                    return;
                 }
 
-                if (!item || !Array.isArray(item.relatedTerms)) {
+                requiredFields.forEach(field => {
+                    let value = entry[field];
+                    let isEmpty = false;
+                    let typeError = false;
+
+                    if (field === 'id') {
+                        // id may contain a non-empty string or a number
+                        if (value === undefined || value === null) {
+                            isEmpty = true;
+                        } else if (typeof value === 'string' && value.trim() === '') {
+                            isEmpty = true;
+                        } else if (typeof value !== 'string' && typeof value !== 'number') {
+                            typeError = true;
+                        }
+                    } else if (field === 'relatedTerms') {
+                        // relatedTerms must be an array ([] is valid)
+                        if (value === undefined || value === null) {
+                            isEmpty = true;
+                        } else if (!Array.isArray(value)) {
+                            typeError = true;
+                        }
+                    } else {
+                        // term, letter, category, definition, practicalExample, level must be non-empty strings
+                        if (value === undefined || value === null) {
+                            isEmpty = true;
+                        } else if (typeof value === 'string' && value.trim() === '') {
+                            isEmpty = true;
+                        } else if (typeof value !== 'string') {
+                            typeError = true;
+                        }
+                    }
+
+                    if (isEmpty) {
+                        missingFieldsErrors.push({
+                            index: index,
+                            term: (typeof entry.term === 'string') ? entry.term : '(Missing or Non-string Term)',
+                            field: field,
+                            value: value !== undefined ? JSON.stringify(value) : 'undefined'
+                        });
+                    } else if (typeError) {
+                        missingFieldsErrors.push({
+                            index: index,
+                            term: (typeof entry.term === 'string') ? entry.term : '(Invalid Term Type)',
+                            field: field + ' (Invalid Type)',
+                            value: typeof value + ': ' + JSON.stringify(value)
+                        });
+                    }
+                });
+            });
+
+            // 5. Letter mismatches check (verifying both term and letter are strings)
+            let letterMismatches = 0;
+            dictionaryData.forEach(entry => {
+                if (!entry || typeof entry !== 'object') return;
+                if (typeof entry.term === 'string' && typeof entry.letter === 'string') {
+                    const expectedLetter = entry.term.trim().charAt(0).toUpperCase();
+                    if (entry.letter.toUpperCase() !== expectedLetter) {
+                        letterMismatches++;
+                    }
+                }
+            });
+
+            // 6. Invalid relatedTerms check
+            let invalidRelatedTerms = 0;
+            dictionaryData.forEach(entry => {
+                if (!entry || typeof entry !== 'object' || !Array.isArray(entry.relatedTerms)) {
                     invalidRelatedTerms++;
                 }
             });
 
-            const results = [
-                "Total entries: " + data.length +
-                    (data.length === 100 ? " - PASS" : " - FAIL"),
-                "Duplicate IDs: " + duplicateIds +
-                    (duplicateIds === 0 ? " - PASS" : " - FAIL"),
-                "Duplicate terms: " + duplicateTerms +
-                    (duplicateTerms === 0 ? " - PASS" : " - FAIL"),
-                "Missing or empty required fields: " + missingFields +
-                    (missingFields === 0 ? " - PASS" : " - FAIL"),
-                "Letter mismatches: " + letterMismatches +
-                    (letterMismatches === 0 ? " - PASS" : " - FAIL"),
-                "Invalid relatedTerms: " + invalidRelatedTerms +
-                    (invalidRelatedTerms === 0 ? " - PASS" : " - FAIL"),
-                "Dictionary module: " +
-                    (window.ERHRMDictionary
-                        ? "PRESENT"
-                        : "NOT INITIALIZED")
-            ];
+            // Build Output HTML
+            let html = `
+                <div class="summary">
+                    <div class="card">
+                        <h3>Audit Results Summary</h3>
+                        <ul>
+                            <li>Total entries: ${totalEntries} – <span class="${totalPass ? 'pass' : 'fail'}">${totalPass ? 'PASS' : 'FAIL'}</span></li>
+                            <li>Duplicate IDs: ${duplicateIdsCount} – <span class="${duplicateIdsCount === 0 ? 'pass' : 'fail'}">${duplicateIdsCount === 0 ? 'PASS' : 'FAIL'}</span></li>
+                            <li>Duplicate terms: ${duplicateTermsCount} – <span class="${duplicateTermsCount === 0 ? 'pass' : 'fail'}">${duplicateTermsCount === 0 ? 'PASS' : 'FAIL'}</span></li>
+                            <li>Missing, empty or invalid required fields: ${missingFieldsErrors.length} – <span class="${missingFieldsErrors.length === 0 ? 'pass' : 'fail'}">${missingFieldsErrors.length === 0 ? 'PASS' : 'FAIL'}</span></li>
+                            <li>Letter mismatches: ${letterMismatches} – <span class="${letterMismatches === 0 ? 'pass' : 'fail'}">${letterMismatches === 0 ? 'PASS' : 'FAIL'}</span></li>
+                            <li>Invalid relatedTerms: ${invalidRelatedTerms} – <span class="${invalidRelatedTerms === 0 ? 'pass' : 'fail'}">${invalidRelatedTerms === 0 ? 'PASS' : 'FAIL'}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            `;
 
-            output.textContent = results.join("\n");
-        })();
+            if (missingFieldsErrors.length > 0) {
+                html += `
+                    <div class="error-details">
+                        <h3>Detailed Missing, Empty or Invalid Field Errors</h3>
+                `;
+                missingFieldsErrors.forEach((err, idx) => {
+                    html += `
+                        <div class="error-item">
+                            <strong>[Error #${idx + 1}]</strong><br>
+                            1. Entry index: ${escapeHtml(err.index)}<br>
+                            2. Dictionary term: ${escapeHtml(err.term)}<br>
+                            3. Missing, empty or invalid field name: ${escapeHtml(err.field)}<br>
+                            4. Current value: ${escapeHtml(err.value)}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            resultsDiv.innerHTML = html;
+        });
     </script>
-
 </body>
 </html>
