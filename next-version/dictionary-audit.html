@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER/HRM Dictionary Audit</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dictionary.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>ER/HRM Dictionary Audit</h1>
+        <p>Temporary testing page for the advanced dictionary.</p>
+
+        <section id="global-dictionary">
+            <h2>Global ER/HRM Dictionary</h2>
+
+            <input
+                type="search"
+                id="dictionary-search"
+                placeholder="Search dictionary terms..."
+            >
+
+            <div id="dictionary-alphabet"></div>
+
+            <select id="dictionary-category">
+                <option value="all">All Categories</option>
+            </select>
+
+            <p id="dictionary-count"></p>
+
+            <div id="dictionary-results"></div>
+
+            <div id="dictionary-details" hidden></div>
+        </section>
+
+        <section>
+            <h2>Audit Results</h2>
+            <pre id="audit-results">Preparing audit...</pre>
+        </section>
+    </main>
+
+    <script src="data/dictionary-data.js"></script>
+    <script src="modules/dictionary.js"></script>
+
+    <script>
+        (function () {
+            const output = document.getElementById("audit-results");
+
+            const data = typeof dictionaryData !== "undefined"
+                ? dictionaryData
+                : null;
+
+            if (!Array.isArray(data)) {
+                output.textContent =
+                    "FAIL: Dictionary dataset could not be loaded.";
+                return;
+            }
+
+            const ids = data.map(item => item.id);
+            const terms = data.map(item =>
+                String(item.term || "").trim().toLowerCase()
+            );
+
+            const duplicateIds = ids.length - new Set(ids).size;
+            const duplicateTerms = terms.length - new Set(terms).size;
+
+            const requiredFields = [
+                "id",
+                "term",
+                "letter",
+                "category",
+                "definition",
+                "practicalExample",
+                "relatedTerms",
+                "level"
+            ];
+
+            let missingFields = 0;
+            let letterMismatches = 0;
+            let invalidRelatedTerms = 0;
+
+            data.forEach(item => {
+                requiredFields.forEach(field => {
+                    if (
+                        !item ||
+                        item[field] === undefined ||
+                        item[field] === null ||
+                        (typeof item[field] === "string" &&
+                         item[field].trim() === "")
+                    ) {
+                        missingFields++;
+                    }
+                });
+
+                if (
+                    item &&
+                    typeof item.term === "string" &&
+                    typeof item.letter === "string" &&
+                    item.term.trim().charAt(0).toUpperCase() !==
+                    item.letter.trim().toUpperCase()
+                ) {
+                    letterMismatches++;
+                }
+
+                if (!item || !Array.isArray(item.relatedTerms)) {
+                    invalidRelatedTerms++;
+                }
+            });
+
+            const results = [
+                "Total entries: " + data.length +
+                    (data.length === 100 ? " - PASS" : " - FAIL"),
+                "Duplicate IDs: " + duplicateIds +
+                    (duplicateIds === 0 ? " - PASS" : " - FAIL"),
+                "Duplicate terms: " + duplicateTerms +
+                    (duplicateTerms === 0 ? " - PASS" : " - FAIL"),
+                "Missing or empty required fields: " + missingFields +
+                    (missingFields === 0 ? " - PASS" : " - FAIL"),
+                "Letter mismatches: " + letterMismatches +
+                    (letterMismatches === 0 ? " - PASS" : " - FAIL"),
+                "Invalid relatedTerms: " + invalidRelatedTerms +
+                    (invalidRelatedTerms === 0 ? " - PASS" : " - FAIL"),
+                "Dictionary module: " +
+                    (window.ERHRMDictionary
+                        ? "PRESENT"
+                        : "NOT INITIALIZED")
+            ];
+
+            output.textContent = results.join("\n");
+        })();
+    </script>
+
+</body>
+</html>
