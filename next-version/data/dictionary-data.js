@@ -614,13 +614,17 @@ const dictionaryData = [
         level: "Intermediate"
     },
     {
+          {
+        id: "total-rewards",
         term: "Total Rewards",
         letter: "T",
         category: "Compensation and Benefits",
-        definition: "Total rewards refers to the combined financial and non-financial value employees receive from their employment, including pay, benefits, recognition and development opportunities.",
-        practicalExample: "A company combines competitive salaries, flexible work and career development opportunities in its employee value proposition.",
-        relatedTerms: ["Employee Benefits", "Reward Management", "Employee Engagement"],
-        level: "Advanced"
+        definition: "The comprehensive monetary and non-monetary elements an organization offers to employees in exchange for their time, talents, efforts, and performance, including compensation, benefits, work-life effectiveness, recognition, and development opportunities.",
+        practicalExample: "Rather than only offering a competitive base salary, a tech firm structures a total rewards package that combines performance bonuses, comprehensive health insurance, flexible remote work schedules, an annual learning stipend, and peer-to-peer recognition awards.",
+        relatedTerms: ["Compensation Management", "Employee Benefits", "Employee Value Proposition", "Intrinsic Motivation"],
+        level: "Professional / Advanced"
+  },
+    
     },
     {
         id: "cm-010",
